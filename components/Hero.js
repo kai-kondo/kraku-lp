@@ -37,13 +37,12 @@ const Hero = ({
             variants={scrollAnimation}>
             <div className=" flex flex-col justify-center items-start row-start-2 sm:row-start-1">
               <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal">
-                Want anything to be easy with <strong>LaslesVPN</strong>.
+                軽貨物配送業の経営をラクに <strong>ケイラクラウド</strong>
               </h1>
               <p className="text-black-500 mt-4 mb-6">
-                Provide a network for all your needs with ease and fun using
-                LaslesVPN discover interesting features from us.
+                軽貨物配送業の業務を効率化するシステム
               </p>
-              <ButtonPrimary>Get Started</ButtonPrimary>
+              <ButtonPrimary>無料で初めてみる</ButtonPrimary>
             </div>
             <div className="flex w-full">
               <motion.div className="h-full w-full" variants={scrollAnimation}>
