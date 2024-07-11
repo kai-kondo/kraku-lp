@@ -10,31 +10,31 @@ import ArrowNext from "../public/assets/Icon/eva_arrow-next-fill.svg";
 const Testimoni = ({
   listTestimoni = [
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
+      name: "A株式会社",
+      image: "/assets/undraw_female_avatar_efig.png",
+      city: "軽貨物配送業",
+      country: "事務員",
+      rating: "5.0",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "これまでドライバーと何度もやり取りしていたシフト作成業務が、ほんの少しの手間でできるようになりました。今となってはケイラクラウドなしでは業務対応は考えられません。とても助かっています。",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
+      name: "ドライバーB",
+      image: "/assets/undraw_Male_avatar_g98d.png",
+      city: "軽貨物配送業",
+      country: "個人",
+      rating: "5.0",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "ケイラクラウドのおかげで、毎月憂鬱だった請求業務から解放されました。金額をスマホで確認し、承認ボタンを押すだけで請求書が発行されるので、パソコン操作が苦手な私でも簡単に請求できます。",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
+      name: "C株式会社",
+      image: "/assets/undraw_Pic_profile_re_7g2h.png",
+      city: "軽貨物配送業",
+      country: "社長",
       rating: "4.5",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "ケイラクラウドのダッシュボードでは売上高・売上原価の推移が一目で分かるので経営計画を立てやすいです。お客様ごとの状況や、利益率の高いお客様などの情報がわかるとさらに良いですね。",
     },
     {
       name: "iezh Robert",
