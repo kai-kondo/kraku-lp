@@ -44,16 +44,20 @@ const Pricing = () => {
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-                  <span className="text-xs uppercase dark:text-gray-600">
-                    ①
-                  </span>
+                  <p className="my-6 text-lg font-medium text-orange-500">
+                    Point 1
+                  </p>
                   <h3 className="text-3xl font-bold">
                     ドライバーシフト管理の効率化
                   </h3>
                   <p className="my-6 dark:text-gray-600">
                     システムを使用しドライバーから希望シフトを提出<br></br>
                     事業主はその状況を元に各ドライバーのシフトを調整<br></br>
-                    画面上をドラッグ&ドロップで操作するなど簡単
+                    画面上を
+                    <strong className="text-orange-500 text-lg">
+                      ドラッグ&ドロップで操作
+                    </strong>
+                    するなど簡単！
                   </p>
                 </div>
               </div>
@@ -77,12 +81,16 @@ const Pricing = () => {
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-                  <span className="text-xs uppercase dark:text-gray-600">
-                    ②
-                  </span>
+                  <p className="my-6 text-lg font-medium text-orange-500">
+                    Point 2
+                  </p>
                   <h3 className="text-3xl font-bold">出退勤管理の効率化</h3>
                   <p className="my-6 dark:text-gray-600">
-                    出退勤状況が一目でわかるダッシュボード<br></br>
+                    出退勤状況が
+                    <strong className="text-orange-500 text-lg">
+                      一目でわかる
+                    </strong>
+                    ダッシュボード<br></br>
                     出退勤情報をリアルタイムで管理画面に反映<br></br>
                     ドライバーは1タップで勤怠管理
                   </p>
@@ -108,15 +116,18 @@ const Pricing = () => {
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-                  <span className="text-xs uppercase dark:text-gray-600">
-                    ③
-                  </span>
+                  <p className="my-6 text-lg font-medium text-orange-500">
+                    Point 3
+                  </p>
                   <h3 className="text-3xl font-bold">精算業務の効率化</h3>
                   <p className="my-6 dark:text-gray-600">
                     ドライバーへの支払い金額確認・ドライバーからの請求を
-                    <br></br>
                     ボタンひとつで簡単操作！<br></br>
-                    面倒な計算もシステムが自動計算！<br></br>
+                    面倒な計算も
+                    <strong className="text-orange-500 text-lg">
+                      システムが自動計算！
+                    </strong>
+                    <br></br>
                     システムで作られた請求書はPDFでダウンロード可能!
                   </p>
                 </div>
@@ -344,7 +355,7 @@ const Pricing = () => {
                     ￥70,000 <span className="text-black-500">/ 月</span>
                   </p>
 
-                  <ButtonOutline>Select</ButtonOutline>
+                  <ButtonOutline>このプランで始める</ButtonOutline>
                 </div>
               </motion.div>
             </ScrollAnimationWrapper>
@@ -484,7 +495,7 @@ const Pricing = () => {
                     ￥59,800 <span className="text-black-500">/ 月</span>
                   </p>
 
-                  <ButtonOutline>Select</ButtonOutline>
+                  <ButtonOutline>このプランで始める</ButtonOutline>
                 </div>
               </motion.div>
             </ScrollAnimationWrapper>
@@ -608,19 +619,69 @@ const Pricing = () => {
             >
               ご利用中の<br></br>お客様の声{" "}
             </motion.h3>
-            <motion.p
-              variants={scrollAnimation}
-              className="leading-normal mx-auto mb-2 mt-4 w-10/12 sm:w-7/12 lg:w-6/12"
-            >
-              These are the stories of our customers who have joined us with
-              great pleasure when using this crazy feature.
-            </motion.p>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper className="w-full flex flex-col py-12">
             <motion.div variants={scrollAnimation}>
               <Testimoni />
             </motion.div>
           </ScrollAnimationWrapper>
+
+          <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-100 dark:text-gray-800">
+            <div className="flex flex-col justify-between">
+              <div className="space-y-2">
+                <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+                  お問い合わせ
+                </h2>
+                <div className="dark:text-gray-600">
+                  機能⾯・利⽤⾯等に関する詳細情報をご希望の⽅はこちらからご連絡ください。
+                </div>
+              </div>
+              <img
+                src="assets/undraw_contact_us_re_4qqt.svg"
+                alt=""
+                className="p-6 h-52 md:h-64"
+              />
+            </div>
+            <form noValidate="" className="space-y-6">
+              <div>
+                <label htmlFor="name" className="text-sm">
+                  Full name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder=""
+                  className="w-full p-3 rounded dark:bg-gray-100"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="text-sm">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  className="w-full p-3 rounded dark:bg-gray-100"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="text-sm">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows="3"
+                  className="w-full p-3 rounded dark:bg-gray-100"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-violet-600 dark:text-gray-50"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
           <ScrollAnimationWrapper className="relative w-full mt-16">
             <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
               <div className="absolute rounded-xl  py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10  bg-orange-500 ">
@@ -628,9 +689,13 @@ const Pricing = () => {
                   <h5 className=" text-xl sm:text-2xl lg:text-3xl leading-relaxed font-bold text-white-500">
                     まずは無料プランに登録！
                   </h5>
-                  <p className="font-bold text-white-500">ケイラクラウドを初めてみよう！</p>
+                  <p className="font-bold text-white-500">
+                    ケイラクラウドを初めてみよう！
+                  </p>
                 </div>
-                <ButtonPrimary className="bg-blue-500">無料プランで始める</ButtonPrimary>
+                <ButtonPrimary className="bg-blue-500">
+                  無料プランで始める
+                </ButtonPrimary>
               </div>
               <div
                 className="absolute bg-black-600 opacity-5 w-11/12 roudned-lg h-60 sm:h-56 top-0 mt-8 mx-auto left-0 right-0"

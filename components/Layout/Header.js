@@ -111,7 +111,11 @@ const Header = () => {
                   無料で始める
               </a>
             </Link>
-            <ButtonOutline>お問い合わせ</ButtonOutline>
+            <Link href="/Form">
+              <a>
+                <ButtonOutline>お問い合わせ</ButtonOutline>
+              </a>
+            </Link>
           </div>
         </nav>
       </header>
