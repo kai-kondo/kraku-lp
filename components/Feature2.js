@@ -17,7 +17,6 @@ const Feature = () => {
   return (
     <div
       className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
-      id="feature"
     >
       <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 py-8 my-12">
         <ScrollAnimationWrapper>
@@ -55,12 +54,12 @@ const Feature = () => {
         <ScrollAnimationWrapper className="flex w-full justify-start">
           <motion.div className="h-full w-full p-4" variants={scrollAnimation}>
             <Image
-              src="/assets/undraw_winners_re_wr1l.svg"
+              src="/assets/feuter.png"
               alt="VPN Illustrasi"
               layout="intrinsic" // or "fixed" depending on your need
               quality={100}
               height={800} // ここで高さを指定
-              width={800} // ここで幅を指定
+              width={1200} // ここで幅を指定
             />
           </motion.div>
         </ScrollAnimationWrapper>

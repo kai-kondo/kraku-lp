@@ -12,11 +12,11 @@ const Pricing = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
   return (
-    <div
-      className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14"
-      id="pricing"
-    >
-      <div className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
+    <div className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14">
+      <div
+        className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center"
+        id="feature"
+      >
         {/* 特徴 */}
         <div className="container mx-auto space-y-12">
           <ScrollAnimationWrapper>
@@ -24,15 +24,8 @@ const Pricing = () => {
               variants={scrollAnimation}
               className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-relaxed text-center"
             >
-              ケイラクの特徴
+              ケイラクラウドの特徴
             </motion.h3>
-            <motion.p
-              variants={scrollAnimation}
-              className="leading-normal w-10/12 sm:w-7/12 lg:w-6/12 mx-auto my-2 text-center"
-            >
-              Let's choose the package that is best for you and explore it
-              happily and cheerfully.
-            </motion.p>
           </ScrollAnimationWrapper>
 
           <ScrollAnimationWrapper>
@@ -132,65 +125,90 @@ const Pricing = () => {
           </ScrollAnimationWrapper>
         </div>
 
+        {/* チュートリアル */}
+        <div className="container mx-auto space-y-12">
+          <ScrollAnimationWrapper>
+            <motion.h3
+              variants={scrollAnimation}
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-relaxed text-center mt-48"
+            >
+              チュートリアル動画
+            </motion.h3>
+          </ScrollAnimationWrapper>
+
+          <ScrollAnimationWrapper>
+            <motion.div
+              className="py-12 w-full px-8 mt-16 flex justify-center items-center verflow-hidden rounded-md shadow-lg lg:flex-row "
+              variants={scrollAnimation}
+            >
+              <video className="w-full max-w-4xl" controls loop muted>
+                <source src="/assets/Introducing-Kiraku.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </motion.div>
+          </ScrollAnimationWrapper>
+        </div>
+
         {/* プラン(無料) */}
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full" id="pricing">
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
               className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-relaxed"
-              style={{ marginTop: "4rem" }}
+              style={{ marginTop: "12rem" }}
             >
               プラン
             </motion.h3>
+          </ScrollAnimationWrapper>
+
+          <ScrollAnimationWrapper>
             <motion.p
               variants={scrollAnimation}
               className="leading-normal w-10/12 sm:w-7/12 lg:w-6/12 mx-auto my-2 text-center text-2xl"
+              style={{ marginTop: "8rem" }}
             >
               無料プランの場合
             </motion.p>
           </ScrollAnimationWrapper>
 
-          <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-12 py-8 lg:py-12 px-6 sm:px-0 lg:px-6 justify-items-center align-items-center">
-            {/* 2 */}
-            <ScrollAnimationWrapper className="flex justify-center">
-              <motion.div
-                variants={scrollAnimation}
-                className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20"
-                whileHover={{
-                  scale: 1.1,
-                  transition: {
-                    duration: 0.2,
-                  },
-                }}
-              >
-                <div className="p-4 lg:p-0 mt-6 lg:mt-16">
-                  <Image
-                    src="/assets/undraw_printing_invoices_-5-r4r.svg"
-                    width={145}
-                    height={165}
-                    alt="Standard Plan"
-                  />
-                </div>
-                <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                  Free Plan{" "}
+          <ScrollAnimationWrapper className="flex justify-center mt-4">
+            <motion.div
+              variants={scrollAnimation}
+              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20"
+              whileHover={{
+                scale: 1.1,
+                transition: {
+                  duration: 0.2,
+                },
+              }}
+            >
+              <div className="p-4 lg:p-0 mt-6 lg:mt-8">
+                <Image
+                  src="/assets/undraw_printing_invoices_-5-r4r.svg"
+                  width={145}
+                  height={165}
+                  alt="Standard Plan"
+                />
+              </div>
+              <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
+                Free Plan{" "}
+              </p>
+              <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
+                <li className="relative check custom-list my-2">
+                  ユーザー数: 1~5人まで
+                </li>
+                <li className="relative check custom-list my-2">
+                  元請け企業数: 2社まで
+                </li>
+              </ul>
+              <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
+                <p className="text-2xl text-black-600 text-center mb-4 ">
+                  FREE
                 </p>
-                <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
-                  <li className="relative check custom-list my-2">
-                    ユーザー数: 1~5人まで
-                  </li>
-                  <li className="relative check custom-list my-2">
-                    元請け企業数: 2社まで
-                  </li>
-                </ul>
-                <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-                  <p className="text-2xl text-black-600 text-center mb-4 ">
-                    FREE
-                  </p>
-                  <ButtonOutline>このプランで始める</ButtonOutline>
-                </div>
-              </motion.div>
-            </ScrollAnimationWrapper>
-          </div>
+                <ButtonOutline>このプランで始める</ButtonOutline>
+              </div>
+            </motion.div>
+          </ScrollAnimationWrapper>
         </div>
 
         {/* プラン(6ヶ月) */}
@@ -474,117 +492,114 @@ const Pricing = () => {
         </div>
 
         {/* ネットワーク */}
-        <div className="flex flex-col w-full my-16">
+        <div className="flex flex-col w-full my-8 md:my-16">
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-relaxed w-9/12 sm:w-6/12 lg:w-4/12 mx-auto"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-relaxed w-11/12 sm:w-10/12 lg:w-8/12 mx-auto text-center mb-24"
             >
               ご利用までの流れ{" "}
             </motion.h3>
-            <motion.p
-              className="leading-normal  mx-auto my-2 w-10/12 sm:w-7/12 lg:w-6/12"
-              variants={scrollAnimation}
-            >
-              See LaslesVPN everywhere to make it easier for you when you move
-              locations.
-            </motion.p>
           </ScrollAnimationWrapper>
-          <ScrollAnimationWrapper>
-            <motion.div variants={scrollAnimation}>
-              <section className="dark:bg-gray-100 dark:text-gray-800">
-                <div className="container mx-auto flex flex-col p-6">
-                  <div className="divide-y dark:divide-gray-300">
-                    <div className="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-                      <div className="flex items-center justify-center lg:col-span-1 col-span-full">
-                        <Image
-                          src="/assets/undraw_agreement_re_d4dv.svg"
-                          width={145}
-                          height={165}
-                          alt="Standard Plan"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
-                        <span className="text-xs tracking-wider uppercase dark:text-violet-600">
-                          Step 1 - Nihil
-                        </span>
-                        <span className="text-xl font-bold md:text-2xl">
-                          お申し込み(ご契約)
-                        </span>
-                        <span className="mt-4 dark:text-gray-700">
-                          お客様のご希望のプランでお申し込み(ご契約)いただきます。
-                        </span>
-                      </div>
+          <motion.div variants={scrollAnimation}>
+            <section className="dark:bg-gray-100 dark:text-gray-800">
+              <div className="container mx-auto flex flex-col p-4 lg:p-6">
+                <div className="divide-y dark:divide-gray-300">
+                  {/* Step 1 */}
+                  <div className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0">
+                    <div className="flex items-center justify-center">
+                      <Image
+                        src="/assets/undraw_agreement_re_d4dv.svg"
+                        width={145}
+                        height={165}
+                        alt="Standard Plan"
+                      />
                     </div>
-                    <div className="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-                      <div className="flex items-center justify-center lg:col-span-1 col-span-full">
-                        <Image
-                          src="/assets/undraw_account_re_o7id.svg"
-                          width={145}
-                          height={165}
-                          alt="Standard Plan"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
-                        <span className="text-xs tracking-wider uppercase dark:text-violet-600">
-                          Step 2 - Explicabo
-                        </span>
-                        <span className="text-xl font-bold md:text-2xl">
-                          アカウント作成
-                        </span>
-                        <span className="mt-4 dark:text-gray-700">
-                          弊社でお客様のケイラクラウドアカウンを作成させていただきます。
-                        </span>
-                      </div>
+                    <div className="flex flex-col justify-center max-w-md text-center lg:text-left">
+                      <span className="text-xs tracking-wider uppercase dark:text-violet-600">
+                        Step 1 - Nihil
+                      </span>
+                      <span className="text-xl font-bold md:text-2xl">
+                        お申し込み(ご契約)
+                      </span>
+                      <span className="mt-2 dark:text-gray-700">
+                        お客様のご希望のプランでお申し込み(ご契約)いただきます。
+                      </span>
                     </div>
-                    <div className="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-                      <div className="flex items-center justify-center lg:col-span-1 col-span-full">
-                        <Image
-                          src="/assets/undraw_our_solution_re_8yk6.svg"
-                          width={145}
-                          height={165}
-                          alt="Standard Plan"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
-                        <span className="text-xs tracking-wider uppercase dark:text-violet-600">
-                          Step 3 - Facilis
-                        </span>
-                        <span className="text-xl font-bold md:text-2xl">
-                          操作方法説明
-                        </span>
-                        <span className="mt-4 dark:bg-gray-100 dark:text-gray-700">
-                          弊社とお客様との間で連携を取り、操作方法の説明を行います。
-                        </span>
-                      </div>
+                  </div>
+                  {/* Step 2 */}
+                  <div className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0">
+                    <div className="flex items-center justify-center">
+                      <Image
+                        src="/assets/undraw_account_re_o7id.svg"
+                        width={145}
+                        height={165}
+                        alt="Standard Plan"
+                      />
                     </div>
-                    <div className="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
-                      <div className="flex items-center justify-center lg:col-span-1 col-span-full">
-                        <Image
-                          src="/assets/undraw_startup_life_re_8ow9.svg"
-                          width={145}
-                          height={165}
-                          alt="Standard Plan"
-                        />
-                      </div>
-                      <div className="flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
-                        <span className="text-xs tracking-wider uppercase dark:text-violet-600">
-                          Step 4 - Aperiam
-                        </span>
-                        <span className="text-xl font-bold md:text-2xl">
-                          ご利用開始
-                        </span>
-                        <span className="mt-4 dark:text-gray-700">
-                          ご利用開始後も、ご不明点等がありましたら公式LINEよりお問い合わせ可能です。
-                        </span>
-                      </div>
+                    <div className="flex flex-col justify-center max-w-md text-center lg:text-left">
+                      <span className="text-xs tracking-wider uppercase dark:text-violet-600">
+                        Step 2 - Explicabo
+                      </span>
+                      <span className="text-xl font-bold md:text-2xl">
+                        アカウント作成
+                      </span>
+                      <span className="mt-2 dark:text-gray-700">
+                        弊社でお客様のケイラクラウドアカウントを作成させていただきます。
+                      </span>
+                    </div>
+                  </div>
+                  {/* Step 3 */}
+                  <div className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0">
+                    <div className="flex items-center justify-center">
+                      <Image
+                        src="/assets/undraw_our_solution_re_8yk6.svg"
+                        width={145}
+                        height={165}
+                        alt="Standard Plan"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-center max-w-md text-center lg:text-left">
+                      <span className="text-xs tracking-wider uppercase dark:text-violet-600">
+                        Step 3 - Facilis
+                      </span>
+                      <span className="text-xl font-bold md:text-2xl">
+                        操作方法説明
+                      </span>
+                      <span className="mt-2 dark:text-gray-700">
+                        弊社とお客様との間で連携を取り、操作方法の説明を行います。
+                      </span>
+                    </div>
+                  </div>
+                  {/* Step 4 */}
+                  <div className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0">
+                    <div className="flex items-center justify-center">
+                      <Image
+                        src="/assets/undraw_startup_life_re_8ow9.svg"
+                        width={145}
+                        height={165}
+                        alt="Standard Plan"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-center max-w-md text-center lg:text-left">
+                      <span className="text-xs tracking-wider uppercase dark:text-violet-600">
+                        Step 4 - Aperiam
+                      </span>
+                      <span className="text-xl font-bold md:text-2xl">
+                        ご利用開始
+                      </span>
+                      <span className="mt-2 dark:text-gray-700">
+                        ご利用開始後も、ご不明点等がありましたら公式LINEよりお問い合わせ可能です。
+                      </span>
                     </div>
                   </div>
                 </div>
-              </section>
-            </motion.div>
-          </ScrollAnimationWrapper>
+              </div>
+            </section>
+          </motion.div>
         </div>
+
+        {/* お客様の声 */}
         <div className="flex flex-col w-full my-16" id="testimoni">
           <ScrollAnimationWrapper>
             <motion.h3
@@ -608,14 +623,14 @@ const Pricing = () => {
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper className="relative w-full mt-16">
             <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
-              <div className="absolute rounded-xl  py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-white-500">
+              <div className="absolute rounded-xl  py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10  bg-orange-500 ">
                 <div className="flex flex-col text-left w-10/12 sm:w-7/12 lg:w-5/12 mb-6 sm:mb-0">
-                  <h5 className="text-black-600 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-medium">
+                  <h5 className=" text-xl sm:text-2xl lg:text-3xl leading-relaxed font-bold text-white-500">
                     まずは無料プランに登録！
                   </h5>
-                  <p>ケイラクラウドを初めてみよう！</p>
+                  <p className="font-bold text-white-500">ケイラクラウドを初めてみよう！</p>
                 </div>
-                <ButtonPrimary>無料プランで始める</ButtonPrimary>
+                <ButtonPrimary className="bg-blue-500">無料プランで始める</ButtonPrimary>
               </div>
               <div
                 className="absolute bg-black-600 opacity-5 w-11/12 roudned-lg h-60 sm:h-56 top-0 mt-8 mx-auto left-0 right-0"
