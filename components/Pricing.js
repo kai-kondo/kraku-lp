@@ -7,6 +7,7 @@ import Maps from "../public/assets/HugeGlobal.svg";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import { Link as ScrollLink } from "react-scroll";
 
 const Pricing = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -626,62 +627,47 @@ const Pricing = () => {
             </motion.div>
           </ScrollAnimationWrapper>
 
-          <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-100 dark:text-gray-800">
+          {/* お問い合わせ */}
+
+          <ScrollAnimationWrapper>
+            <motion.h3
+              variants={scrollAnimation}
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-normal w-9/12 sm: lg:w-4/12 mx-auto"
+              id="contact"
+            >
+              お問い合わせ{" "}
+            </motion.h3>
+            <motion.div
+              variants={scrollAnimation}
+              className="dark:text-gray-600 mt-2 "
+            >
+              ケイラクラウドに関する詳細情報・無料をご希望の⽅はこちらからご連絡ください。
+            </motion.div>
+          </ScrollAnimationWrapper>
+
+          <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:text-gray-800">
             <div className="flex flex-col justify-between">
-              <div className="space-y-2">
-                <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
-                  お問い合わせ
-                </h2>
-                <div className="dark:text-gray-600">
-                  機能⾯・利⽤⾯等に関する詳細情報をご希望の⽅はこちらからご連絡ください。
-                </div>
-              </div>
               <img
                 src="assets/undraw_contact_us_re_4qqt.svg"
                 alt=""
-                className="p-6 h-52 md:h-64"
+                className="p-6 h-52 md:h-64 mt-32"
               />
             </div>
-            <form noValidate="" className="space-y-6">
-              <div>
-                <label htmlFor="name" className="text-sm">
-                  Full name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  placeholder=""
-                  className="w-full p-3 rounded dark:bg-gray-100"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="text-sm">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  className="w-full p-3 rounded dark:bg-gray-100"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="text-sm">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows="3"
-                  className="w-full p-3 rounded dark:bg-gray-100"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-violet-600 dark:text-gray-50"
+            <div className="flex flex-col justify-between">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeBMJPIFmdtlBVgPJWLGOEZKAfC34REPMNWwSfIWfXZ5JDMLg/viewform?embedded=true"
+                width="440"
+                height="1131"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
               >
-                Send Message
-              </button>
-            </form>
+                読み込んでいます…
+              </iframe>
+            </div>
           </div>
+
+          {/* まずは登録 */}
           <ScrollAnimationWrapper className="relative w-full mt-16">
             <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
               <div className="absolute rounded-xl  py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10  bg-orange-500 ">
@@ -693,9 +679,16 @@ const Pricing = () => {
                     ケイラクラウドを初めてみよう！
                   </p>
                 </div>
-                <ButtonPrimary className="bg-blue-500">
-                  無料プランで始める
-                </ButtonPrimary>
+                <ScrollLink
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  offset={-100} // オフセットを調整して、スクロール位置を微調整
+                >
+                  <ButtonPrimary className="bg-blue-500">
+                    無料プランで始める
+                  </ButtonPrimary>
+                </ScrollLink>
               </div>
               <div
                 className="absolute bg-black-600 opacity-5 w-11/12 roudned-lg h-60 sm:h-56 top-0 mt-8 mx-auto left-0 right-0"

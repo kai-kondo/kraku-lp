@@ -106,16 +106,25 @@ const Header = () => {
             </LinkScroll>
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
-            <Link href="/">
+            <LinkScroll
+              to="contact"
+              smooth={true}
+              duration={500}
+              offset={-100} // オフセットを調整して、スクロール位置を微調整
+            >
               <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">
-                  無料で始める
+                無料で始める
               </a>
-            </Link>
-            <Link href="/Form">
-              <a>
-                <ButtonOutline>お問い合わせ</ButtonOutline>
-              </a>
-            </Link>
+            </LinkScroll>
+
+            <LinkScroll
+              to="contact"
+              smooth={true}
+              duration={500}
+              offset={-100} // オフセットを調整して、スクロール位置を微調整
+            >
+              <ButtonOutline>お問い合わせ</ButtonOutline>
+            </LinkScroll>
           </div>
         </nav>
       </header>

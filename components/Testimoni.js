@@ -34,16 +34,16 @@ const Testimoni = ({
       country: "社長",
       rating: "4.5",
       testimoni:
-        "ケイラクラウドのダッシュボードでは売上高・売上原価の推移が一目で分かるので経営計画を立てやすいです。お客様ごとの状況や、利益率の高いお客様などの情報がわかるとさらに良いですね。",
+        "ケイラクラウドのダッシュボードでは売上高・売上原価の推移が一目で分かるので経営計画を立てやすいです。今後はお客様ごとの状況や、利益率の高いお客様などの情報がわかるとさらに良いですね。",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
+      name: "D株式会社",
+      image: "/assets/undraw_profile_pic_re_iwgo.svg",
+      city: "軽貨物配送業",
+      country: "社員",
+      rating: "5.0",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "シフト管理が非常に楽になりました。ダッシュボードは、出退勤状況を一目で把握できリアルタイムでの勤怠管理が可能になりました。ドライバーも1タップで出退勤を記録できるので、現場の負担も減少しました。",
     },
   ],
 }) => {

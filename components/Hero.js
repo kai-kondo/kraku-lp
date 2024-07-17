@@ -4,6 +4,7 @@ import ButtonPrimary from "./misc/ButtonPrimary";
 import {motion} from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import { Link as LinkScroll } from "react-scroll";
 
 const Hero = ({
   listUser = [
@@ -53,7 +54,14 @@ const Hero = ({
               <strong>ケイラクラウド</strong>
             </h1>
             <div className="ml-12">
-              <ButtonPrimary>無料で初めてみる</ButtonPrimary>
+              <LinkScroll
+                to="contact"
+                smooth={true}
+                duration={500}
+                offset={-150} // オフセットを調整して、スクロール位置を微調整
+              >
+                <ButtonPrimary>無料で始めてみる</ButtonPrimary>
+              </LinkScroll>
             </div>
           </div>
           <div className="flex w-full">
