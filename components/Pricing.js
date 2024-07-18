@@ -552,7 +552,7 @@ const Pricing = () => {
         </div>
 
         {/* ネットワーク */}
-        <div className="flex flex-col w-full my-8 md:my-16">
+        <div className="flex flex-col w-full my-8 md:my-16" id="1">
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
