@@ -23,7 +23,7 @@ const Header = () => {
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
           <div className="col-start-1 col-end-2 flex items-center">
             <img
-              src="/assets/kraku.png"
+              src="/assets/krakuraudo.png"
               alt="Kraku Logo"
               className="h-8 w-auto"
             />
