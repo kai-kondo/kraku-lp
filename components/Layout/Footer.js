@@ -54,7 +54,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/assets/icons8-facebookの新しい-50.png"
+                  src="/assets/facebook.png"
                   alt="Facebook Logo"
                   className="h-8 w-8"
                 />
