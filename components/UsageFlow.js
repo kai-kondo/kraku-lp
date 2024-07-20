@@ -15,6 +15,7 @@ const UsageFlow = () => {
       className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14"
       id="UsageFlow"
     >
+      {/* ご利用までの流れ */}
       <div className="flex flex-col w-full my-8 md:my-16" id="1">
         <ScrollAnimationWrapper>
           <motion.h3
@@ -121,6 +122,7 @@ const UsageFlow = () => {
           </section>
         </motion.div>
       </div>
+
       {/* お客様の声 */}
       <div className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
         <div className="flex flex-col w-full my-16" id="testimoni">
@@ -167,14 +169,15 @@ const UsageFlow = () => {
             </iframe>
           </div>
 
+          {/* ケイラクラウドを初めてみよう！ */}
           <ScrollAnimationWrapper className="relative w-full mt-16">
             <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
               <div className="absolute rounded-xl  py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-orange-500">
                 <div className="flex flex-col text-left w-10/12 sm:w-7/12 lg:w-5/12 mb-6 sm:mb-0">
                   <h5 className="text-white-500 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-medium">
-                    <storong>
+                    <strong>
                       ケイラクラウドを<br></br>初めてみよう！
-                    </storong>
+                    </strong>
                   </h5>
                   <p className="text-gray-500">まずは無料プランに登録！</p>
                 </div>
@@ -184,7 +187,7 @@ const UsageFlow = () => {
                   duration={500}
                   offset={-100} // オフセットを調整して、スクロール位置を微調整
                 >
-                  <ButtonPrimary className="bg-blue-500">
+                  <ButtonPrimary className="bg-orange-500">
                     無料プランで始める
                   </ButtonPrimary>
                 </ScrollLink>

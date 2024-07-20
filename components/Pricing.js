@@ -41,7 +41,7 @@ const Pricing = () => {
         <ScrollAnimationWrapper className="flex justify-center mt-4">
           <motion.div
             variants={scrollAnimation}
-            className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20"
+            className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
             whileHover={{
               scale: 1.1,
               transition: {
@@ -104,7 +104,7 @@ const Pricing = () => {
           <ScrollAnimationWrapper className="flex justify-center">
             <motion.div
               variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20"
+              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
               whileHover={{
                 scale: 1.1,
                 transition: {
@@ -139,7 +139,7 @@ const Pricing = () => {
                   to="contact"
                   smooth={true}
                   duration={500}
-                  offset={-100} // オフセットを調整して、スクロール位置を微調整
+                  offset={-100} // オフセットを調整して、スク���ール位置を微調整
                 >
                   <ButtonOutline>このプランで始める</ButtonOutline>
                 </ScrollLink>
@@ -151,7 +151,7 @@ const Pricing = () => {
           <ScrollAnimationWrapper className="flex justify-center">
             <motion.div
               variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20"
+              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
               whileHover={{
                 scale: 1.1,
                 transition: {
@@ -198,7 +198,7 @@ const Pricing = () => {
           <ScrollAnimationWrapper className="flex justify-center">
             <motion.div
               variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20"
+              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
               whileHover={{
                 scale: 1.1,
                 transition: {
@@ -265,7 +265,7 @@ const Pricing = () => {
           <ScrollAnimationWrapper className="flex justify-center">
             <motion.div
               variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20"
+              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
               whileHover={{
                 scale: 1.1,
                 transition: {
@@ -312,7 +312,7 @@ const Pricing = () => {
           <ScrollAnimationWrapper className="flex justify-center">
             <motion.div
               variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20"
+              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
               whileHover={{
                 scale: 1.1,
                 transition: {
@@ -359,7 +359,7 @@ const Pricing = () => {
           <ScrollAnimationWrapper className="flex justify-center">
             <motion.div
               variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20"
+              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
               whileHover={{
                 scale: 1.1,
                 transition: {

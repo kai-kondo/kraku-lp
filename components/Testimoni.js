@@ -11,7 +11,7 @@ const Testimoni = ({
   listTestimoni = [
     {
       name: "A株式会社",
-      image: "/assets/undraw_female_avatar_efig.png",
+      image: "/assets/avatar.png",
       city: "軽貨物配送業",
       country: "事務員",
       rating: "5.0",
