@@ -32,12 +32,12 @@ const Pricing = () => {
             >
               <div className="flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row">
                 <img
-                  src="/assets/logo3.png"
+                  src="/assets/shift.png"
                   alt="VPN Illustrasi"
                   layout="intrinsic" // or "fixed" depending on your need
                   quality={100}
                   height={800} // ここで高さを指定
-                  width={400} // ここで幅を指定
+                  width={300} // ここで幅を指定
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
@@ -69,12 +69,12 @@ const Pricing = () => {
             >
               <div className="flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row-reverse">
                 <img
-                  src="/assets/logo10.png"
+                  src="/assets/shift2.png"
                   alt="VPN Illustrasi"
                   layout="intrinsic" // or "fixed" depending on your need
                   quality={100}
                   height={800} // ここで高さを指定
-                  width={400} // ここで幅を指定
+                  width={300} // ここで幅を指定
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
@@ -104,12 +104,12 @@ const Pricing = () => {
             >
               <div className="flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row">
                 <img
-                  src="/assets/logo11.png"
+                  src="/assets/shift3.png"
                   alt="VPN Illustrasi"
                   layout="intrinsic" // or "fixed" depending on your need
                   quality={100}
                   height={800} // ここで高さを指定
-                  width={400} // ここで幅を指定
+                  width={300} // ここで幅を指定
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
