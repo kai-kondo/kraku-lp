@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import Link from "next/link";
 
 
 const Pricing = () => {
@@ -56,6 +56,9 @@ const Pricing = () => {
                     </strong>
                     するなど簡単！
                   </p>
+                  <Link href="/DetailPage">
+                    <a className="text-blue-500 underline">詳細はこちら</a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -156,8 +159,8 @@ const Pricing = () => {
             </motion.div>
           </ScrollAnimationWrapper>
         </div>
-        </div>
       </div>
+    </div>
   );
 };
 

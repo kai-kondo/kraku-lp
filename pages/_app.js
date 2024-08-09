@@ -1,26 +1,27 @@
+// pages/_app.js
 import { useEffect } from "react";
 import Head from "next/head";
 import "../styles/tailwind.css";
 import "../styles/slick.css";
+import DetailPage from "./DetailPage";
 
 const GA_TRACKING_ID = "G-FQPHXPRB3Y"; // あなたのトラッキングID
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     // Google Analytics スクリプトを初期化
+    const handleRouteChange = (url) => {
+      window.gtag("config", GA_TRACKING_ID, {
+        page_path: url,
+      });
+    };
+
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       window.dataLayer.push(arguments);
     }
     gtag("js", new Date());
     gtag("config", GA_TRACKING_ID);
-
-    // ルーティングの変更を監視し、ページビューを送信
-    const handleRouteChange = (url) => {
-      gtag("config", GA_TRACKING_ID, {
-        page_path: url,
-      });
-    };
 
     // ルーターのイベントを監視
     const { events } = require("next/router");
@@ -49,7 +50,11 @@ function MyApp({ Component, pageProps }) {
           }}
         />
       </Head>
-      <Component {...pageProps} />
+      {pageProps.showDetailPage ? (
+        <DetailPage {...pageProps} />
+      ) : (
+        <Component {...pageProps} />
+      )}
     </>
   );
 }
