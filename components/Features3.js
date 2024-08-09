@@ -149,10 +149,35 @@ const Pricing = () => {
 
           <ScrollAnimationWrapper>
             <motion.div
-              className="py-12 w-full px-8 mt-16 flex justify-center items-center verflow-hidden rounded-md shadow-lg lg:flex-row "
+              className="py-12 w-full px-8 mt-16 flex justify-center items-center"
               variants={scrollAnimation}
             >
-              <video className="w-full max-w-4xl" controls loop muted>
+              {/* 再生ボタンのある画像 */}
+              <img
+                src="/assets/video2.png"
+                loading="lazy"
+                alt="再生する"
+                width="640"
+                height="360"
+                className="cursor-pointer"
+                onClick={() => {
+                  document.getElementById("tutorial-video").style.display =
+                    "block";
+                  document.getElementById("video-thumbnail").style.display =
+                    "none";
+                  document.getElementById("tutorial-video").play();
+                }}
+                id="video-thumbnail"
+              />
+
+              {/* 動画コンテナ */}
+              <video
+                id="tutorial-video"
+                className="w-full max-w-4xl hidden"
+                controls
+                loop
+                muted
+              >
                 <source src="/assets/Introducing-Kiraku.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
