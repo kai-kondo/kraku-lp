@@ -113,20 +113,23 @@ export default function Home() {
                     alt="VPN Illustrasi"
                     layout="intrinsic" // or "fixed" depending on your need
                     quality={100}
-                    className="mx-auto rounded-lg shadow-lg"
+                    className="mx-auto rounded-lg"
                   />
                 </div>
               </div>
               <div>
                 <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                   <div className="lg:col-start-2">
-                    <h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-900">
-                      Eam nibh gloriatur ex
+                    <h3 className="text-2xl font-bold tracking-tight sm:text-3xl text-orange-500">
+                      シフトは前月の情報を元に自動作成可能
                     </h3>
                     <p className="mt-3 text-lg dark:text-gray-600">
-                      Per odio fabellas consulatu cu. Utroque detracto mel ea,
-                      quo te latine theophrastus. Ea his tale nibh dissentias,
-                      mei exerci tamquam euripidis cu.
+                      管理者・ドライバー共に前月に提出/作成したシフトをもとに{" "}
+                      <strong className="text-green-500">
+                        システムが自動的にシフト案を作成
+                      </strong>
+                      してくれます。
+                      この機能により、シフトを考える時間を短縮することが可能です。
                     </p>
                     <div className="mt-12 space-y-12">
                       <div className="flex">
@@ -137,7 +140,7 @@ export default function Home() {
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
-                              className="w-10 h-10 text-blue-500"
+                              className="w-10 h-10 text-green-500"
                             >
                               <path
                                 strokeLinecap="round"
@@ -149,14 +152,9 @@ export default function Home() {
                           </div>
                         </div>
                         <div className="ml-4">
-                          <h4 className="text-lg font-medium leading-6 dark:text-gray-900">
-                            Cibo augue offendit has ad
+                          <h4 className="text-lg font-bold leading-6 text-black-600">
+                            1つのボタンででシフトを一括作成
                           </h4>
-                          <p className="mt-2 dark:text-gray-600">
-                            An per velit appellantur, ut utinam minimum nominavi
-                            sit, odio nostro habemus ne nec. Ne sonet regione
-                            contentiones est.
-                          </p>
                         </div>
                       </div>
                       <div className="flex">
@@ -167,7 +165,7 @@ export default function Home() {
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
-                              className="w-10 h-10 text-blue-500"
+                              className="w-10 h-10 text-green-500"
                             >
                               <path
                                 strokeLinecap="round"
@@ -179,53 +177,18 @@ export default function Home() {
                           </div>
                         </div>
                         <div className="ml-4">
-                          <h4 className="text-lg font-medium leading-6 dark:text-gray-900">
-                            At eum ferri luptatum lobortis
+                          <h4 className="text-lg font-bold leading-6 text-black-600">
+                            更新の都度ドライバーへ自動連絡
                           </h4>
-                          <p className="mt-2 dark:text-gray-600">
-                            Te per quidam maiorum ocurreret, etiam delicatissimi
-                            usu ad. Ne has quod periculis. Te sit primis iisque
-                            efficiantur.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex">
-                        <div className="flex-shrink-0">
-                          <div className="flex items-center justify-center w-12 h-12 rounded-md dark:bg-violet-600 dark:text-gray-50">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              className="w-10 h-10 text-blue-500"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M5 13l4 4L19 7"
-                              ></path>
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="ml-4">
-                          <h4 className="text-lg font-medium leading-6 dark:text-gray-900">
-                            Dicunt verterem evertitur eu sea
-                          </h4>
-                          <p className="mt-2 dark:text-gray-600">
-                            Audire principes rationibus eam an, autem nominavi
-                            luptatum per te. Sumo fabulas vim eu, sonet saperet
-                            eleifend ut vix.
-                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">
                     <img
-                      src="https://source.unsplash.com/random/361x481"
+                      src="/assets/detail3.png"
                       alt=""
-                      className="mx-auto rounded-lg shadow-lg dark:bg-gray-500"
+                      className="mx-auto rounded-lg "
                     />
                   </div>
                 </div>
