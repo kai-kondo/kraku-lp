@@ -6,7 +6,7 @@ const defaultMeta = {
   title: "ケイラクラウド",
   siteName: "ケイラクラウド",
   description:
-    "軽貨物に特化した業務管理クラウドサービス",
+    "軽貨物に特化した業務管理クラウドサービスケイラクラウド。軽貨物事業者・ドライバーの業務を効率化し経営をラクにするシステム。無料でご利用いただくことも可能。",
   // change base url of your web (without '/' at the end)
   url: "https://next-landing-vpn.vercel.app",
   type: "website",
