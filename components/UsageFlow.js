@@ -161,9 +161,9 @@ const UsageFlow = () => {
               src="https://docs.google.com/forms/d/e/1FAIpQLSeBMJPIFmdtlBVgPJWLGOEZKAfC34REPMNWwSfIWfXZ5JDMLg/viewform?embedded=true"
               width="440"
               height="982"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
+              frameBorder="0" // 修正後
+              marginHeight="0" // 修正後
+              marginWidth="0" // 修正後
             >
               読み込んでいます…
             </iframe>
