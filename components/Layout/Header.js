@@ -3,6 +3,8 @@ import Link from "next/link";
 // Import react scroll
 import { Link as LinkScroll } from "react-scroll";
 import ButtonOutline from "../misc/ButtonOutline.";
+import ButtonOutline2 from "../misc/ButtonOutline2";
+import LogoVPN from "../../public/assets/kraku.png";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -23,39 +25,37 @@ const Header = () => {
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
           <div className="col-start-1 col-end-2 flex items-center">
             <Link href="/">
-              <img
-                src="/assets/krakuraudo.png"
-                alt="Kraku Logo"
-                className="h-8 w-auto cursor-pointer"
-              />
+              <img src={LogoVPN.src} alt="Logo" className="h-16 my-0" />
             </Link>
           </div>
           <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
             <LinkScroll
               activeClass="active"
-              to="feature"
+              to="about"
               spy={true}
               smooth={true}
               duration={1000}
-              offset={-100}
+              offset={-150}
               onSetActive={() => {
-                setActiveLink("feature");
+                setActiveLink("about");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "feature"
+                (activeLink === "about"
                   ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
+                  : " text-black-500 hover:text-orange-500 a")
               }
             >
               特徴
             </LinkScroll>
+
             <LinkScroll
               activeClass="active"
               to="pricing"
               spy={true}
               smooth={true}
               duration={1000}
+              offset={-100}
               onSetActive={() => {
                 setActiveLink("pricing");
               }}
@@ -71,30 +71,31 @@ const Header = () => {
 
             <LinkScroll
               activeClass="active"
-              to="1"
+              to="feature"
               spy={true}
               smooth={true}
               duration={1000}
-              offset={-100}
+              offset={-150}
               onSetActive={() => {
-                setActiveLink("1");
+                setActiveLink("feature");
               }}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "about"
+                (activeLink === "feature"
                   ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 a")
+                  : " text-black-500 hover:text-orange-500 ")
               }
             >
               ご利用の流れ
             </LinkScroll>
+
             <LinkScroll
               activeClass="active"
               to="testimoni"
               spy={true}
               smooth={true}
               duration={1000}
-              offset={-100}
+              offset={-180}
               onSetActive={() => {
                 setActiveLink("testimoni");
               }}
@@ -105,7 +106,7 @@ const Header = () => {
                   : " text-black-500 hover:text-orange-500 ")
               }
             >
-              お客様の声
+              ご利用者の声
             </LinkScroll>
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
@@ -113,19 +114,11 @@ const Header = () => {
               to="contact"
               smooth={true}
               duration={500}
-              offset={-100} // オフセットを調整して、スクロール位置を微調整
+              offset={-150} // オフセットを調整して、スクロール位置を微調整
             >
-              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all cursor-pointer">
-                無料で始める
+              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">
+                <ButtonOutline2>無料で始める</ButtonOutline2>
               </a>
-            </LinkScroll>
-
-            <LinkScroll
-              to="contact"
-              smooth={true}
-              duration={500}
-              offset={-100} // オフセットを調整して、スクロール位置を微調整
-            >
               <ButtonOutline>お問い合わせ</ButtonOutline>
             </LinkScroll>
           </div>
@@ -138,17 +131,17 @@ const Header = () => {
           <ul className="flex w-full justify-between items-center text-black-500">
             <LinkScroll
               activeClass="active"
-              to="feature"
+              to="about"
               spy={true}
               smooth={true}
               duration={1000}
-              offset={-100}
+              offset={-150}
               onSetActive={() => {
-                setActiveLink("feature");
+                setActiveLink("about");
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "feature"
+                (activeLink === "about"
                   ? "  border-orange-500 text-orange-500"
                   : " border-transparent")
               }
@@ -171,11 +164,42 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass="active"
+              to="feature"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("feature");
+              }}
+              className={
+                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
+                (activeLink === "feature"
+                  ? "  border-orange-500 text-orange-500"
+                  : " border-transparent ")
+              }
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9 3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                />
+              </svg>
+              プラン
+            </LinkScroll>
+            <LinkScroll
+              activeClass="active"
               to="pricing"
               spy={true}
               smooth={true}
               duration={1000}
-              offset={-100}
               onSetActive={() => {
                 setActiveLink("pricing");
               }}
@@ -197,53 +221,17 @@ const Header = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              プラン
-            </LinkScroll>
-
-            <LinkScroll
-              activeClass="active"
-              to="1"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              offset={-100}
-              onSetActive={() => {
-                setActiveLink("1");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "1"
-                  ? "  border-orange-500 text-orange-500"
-                  : " border-transparent ")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08 .402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
               ご利用の流れ
             </LinkScroll>
-
             <LinkScroll
               activeClass="active"
               to="testimoni"
               spy={true}
               smooth={true}
               duration={1000}
-              offset={-100}
               onSetActive={() => {
                 setActiveLink("testimoni");
               }}
@@ -268,7 +256,7 @@ const Header = () => {
                   d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                 />
               </svg>
-              ご利用の声
+              お客様の声
             </LinkScroll>
           </ul>
         </div>

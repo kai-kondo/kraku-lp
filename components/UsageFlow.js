@@ -16,9 +16,10 @@ const UsageFlow = () => {
       id="UsageFlow"
     >
       {/* ご利用までの流れ */}
-      <div className="flex flex-col w-full my-8 md:my-16" id="1">
+      <div className="flex flex-col w-full my-8 md:my-16">
         <ScrollAnimationWrapper>
           <motion.h3
+            id="feature"
             variants={scrollAnimation}
             className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-relaxed w-11/12 sm:w-10/12 lg:w-8/12 mx-auto text-center mb-24"
           >
@@ -125,7 +126,7 @@ const UsageFlow = () => {
 
       {/* お客様の声 */}
       <div className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
-        <div className="flex flex-col w-full my-16" id="testimoni">
+        <div className="flex flex-col w-full my-16">
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
@@ -135,7 +136,7 @@ const UsageFlow = () => {
             </motion.h3>
           </ScrollAnimationWrapper>
           <ScrollAnimationWrapper className="w-full flex flex-col py-12">
-            <motion.div variants={scrollAnimation}>
+            <motion.div id="testimoni" variants={scrollAnimation}>
               <Testimoni />
             </motion.div>
           </ScrollAnimationWrapper>
