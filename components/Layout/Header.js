@@ -109,17 +109,21 @@ const Header = () => {
               ご利用者の声
             </LinkScroll>
           </ul>
-          <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
+          <div className="col-start-10 col-end-12 font-medium flex justify-end items-center flex-row gap-2">
             <LinkScroll
               to="contact"
               smooth={true}
               duration={500}
               offset={-150} // オフセットを調整して、スクロール位置を微調整
             >
-              <a className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">
-                <ButtonOutline2>無料で始める</ButtonOutline2>
-              </a>
-              <ButtonOutline>お問い合わせ</ButtonOutline>
+              <ButtonOutline2 className="text-black-600 capitalize tracking-wide hover:text-orange-500 transition-all text-xs sm:text-sm py-1 px-2 sm:py-2 sm:px-4">
+                無料で始める
+              </ButtonOutline2>
+            </LinkScroll>
+            <LinkScroll to="contact" smooth={true} duration={500} offset={-150}>
+              <ButtonOutline className="text-black-600 capitalize tracking-wide hover:text-orange-500 transition-all text-xs sm:text-sm py-1 px-2 sm:py-2 sm:px-4">
+                お問い合わせ
+              </ButtonOutline>
             </LinkScroll>
           </div>
         </nav>

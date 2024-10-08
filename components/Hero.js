@@ -4,6 +4,8 @@ import ButtonPrimary from "./misc/ButtonPrimary";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import { Link as LinkScroll } from "react-scroll";
+import Link from "next/link";
 
 const Hero = ({
   listUser = [
@@ -42,13 +44,20 @@ const Hero = ({
             </h1>
             <p className="text-black-500 mt-4 mb-6 text-xl font-bold">
               全ての機能を
-              <strong className="font-bold text-orange-100 text-3xl font-bold">
+              <strong className="font-bold text-orange-100 text-3xl">
                 無料
               </strong>
               で利用可能！<br></br>
               <p className="text-xs">※ドライバー5名 元請け企業2社までの登録</p>
             </p>
-            <ButtonPrimary>無料で始める</ButtonPrimary>
+            <LinkScroll
+              to="contact"
+              smooth={true}
+              duration={500}
+              offset={-150} // オフセットを調整して、スクロール位置を微調整
+            >
+              <ButtonPrimary>無料で始める</ButtonPrimary>
+            </LinkScroll>
           </div>
           <div className="flex w-full">
             <motion.div className="h-full w-full" variants={scrollAnimation}>
