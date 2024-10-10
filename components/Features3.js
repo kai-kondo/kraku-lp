@@ -10,11 +10,9 @@ const Pricing = () => {
 
   return (
     <div className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14">
-      <div
-        className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center"
-      >
+      <div className="max-w-screen-xl  px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
         {/* 特徴 */}
-        <div className="container mx-auto space-y-12" id = "about">
+        <div className="container mx-auto space-y-12" id="about">
           <ScrollAnimationWrapper>
             <motion.h3
               variants={scrollAnimation}
@@ -93,6 +91,9 @@ const Pricing = () => {
                     出退勤情報をリアルタイムで管理画面に反映<br></br>
                     ドライバーは1タップで勤怠管理
                   </p>
+                  <Link href="/AttendanceDetaile">
+                    <a className="text-blue-500 underline">詳細はこちら</a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -150,9 +151,12 @@ const Pricing = () => {
             <motion.div
               className="py-12 w-full px-8 mt-16 flex justify-center items-center"
               variants={scrollAnimation}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 0.8 }}
             >
               {/* 再生ボタンのある画像 */}
-              <img
+              <motion.img
                 src="/assets/video2.png"
                 loading="lazy"
                 alt="再生する"
@@ -160,26 +164,33 @@ const Pricing = () => {
                 height="360"
                 className="cursor-pointer"
                 onClick={() => {
-                  document.getElementById("tutorial-video").style.display =
-                    "block";
-                  document.getElementById("video-thumbnail").style.display =
-                    "none";
-                  document.getElementById("tutorial-video").play();
+                  const videoElement =
+                    document.getElementById("tutorial-video");
+                  const thumbnailElement =
+                    document.getElementById("video-thumbnail");
+
+                  thumbnailElement.style.display = "none";
+                  videoElement.style.display = "block";
+                  videoElement.play();
                 }}
                 id="video-thumbnail"
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} // ホバー時に拡大
               />
 
               {/* 動画コンテナ */}
-              <video
+              <motion.video
                 id="tutorial-video"
                 className="w-full max-w-4xl hidden"
                 controls
                 loop
                 muted
+                initial={{ opacity: 0 }} // 初期状態を透明に
+                animate={{ opacity: 1 }} // 表示時に不透明に
+                transition={{ duration: 0.5 }} // アニメーションの持続時間
               >
                 <source src="/assets/Introducing-Kiraku.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
-              </video>
+              </motion.video>
             </motion.div>
           </ScrollAnimationWrapper>
         </div>

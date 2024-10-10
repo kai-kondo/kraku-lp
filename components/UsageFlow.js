@@ -26,12 +26,19 @@ const UsageFlow = () => {
             ご利用までの流れ{" "}
           </motion.h3>
         </ScrollAnimationWrapper>
+
         <motion.div variants={scrollAnimation}>
           <section className="dark:bg-gray-100 dark:text-gray-800">
             <div className="container mx-auto flex flex-col p-4 lg:p-6">
               <div className="divide-y dark:divide-gray-300">
                 {/* Step 1 */}
-                <div className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0">
+                <motion.div
+                  variants={scrollAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0"
+                >
                   <div className="flex items-center justify-center">
                     <Image
                       src="/assets/undraw_agreement_re_d4dv.svg"
@@ -51,9 +58,16 @@ const UsageFlow = () => {
                       お客様のご希望のプランでお申し込み(ご契約)いただきます。
                     </span>
                   </div>
-                </div>
+                </motion.div>
+
                 {/* Step 2 */}
-                <div className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0">
+                <motion.div
+                  variants={scrollAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0"
+                >
                   <div className="flex items-center justify-center">
                     <Image
                       src="/assets/undraw_account_re_o7id.svg"
@@ -73,9 +87,16 @@ const UsageFlow = () => {
                       弊社でお客様のケイラクラウドアカウントを作成させていただきます。
                     </span>
                   </div>
-                </div>
+                </motion.div>
+
                 {/* Step 3 */}
-                <div className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0">
+                <motion.div
+                  variants={scrollAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0"
+                >
                   <div className="flex items-center justify-center">
                     <Image
                       src="/assets/undraw_our_solution_re_8yk6.svg"
@@ -95,9 +116,16 @@ const UsageFlow = () => {
                       弊社とお客様との間で連携を取り、操作方法の説明を行います。
                     </span>
                   </div>
-                </div>
+                </motion.div>
+
                 {/* Step 4 */}
-                <div className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0">
+                <motion.div
+                  variants={scrollAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  className="grid justify-center grid-cols-1 lg:grid-cols-2 p-4 mx-auto space-y-4 lg:space-y-0"
+                >
                   <div className="flex items-center justify-center">
                     <Image
                       src="/assets/undraw_startup_life_re_8ow9.svg"
@@ -117,7 +145,7 @@ const UsageFlow = () => {
                       ご利用開始後も、ご不明点等がありましたら公式LINEよりお問い合わせ可能です。
                     </span>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </section>

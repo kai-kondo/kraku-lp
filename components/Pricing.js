@@ -241,7 +241,7 @@ const Pricing = () => {
         </div>
       </div>
 
-      {/* プラン(1年) */}
+      {/* (1年) */}
       <div className="flex flex-col w-full">
         <ScrollAnimationWrapper>
           <motion.h3
