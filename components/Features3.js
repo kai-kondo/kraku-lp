@@ -2,7 +2,6 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
-import ButtonPrimary from "./misc/ButtonPrimary";
 import Link from "next/link";
 
 
