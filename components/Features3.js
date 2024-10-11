@@ -39,7 +39,7 @@ const Pricing = () => {
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-                  <p className="my-6 text-2xl font-medium text-pink-100">
+                  <p className="my-6 text-2xl font-medium text-orange-500">
                     Point 1
                   </p>
                   <h3 className="text-3xl font-bold text-orange-100">
@@ -55,7 +55,9 @@ const Pricing = () => {
                     するなど簡単！
                   </p>
                   <Link href="/DetailPage">
-                    <a className="text-blue-500 underline">詳細はこちら</a>
+                    <a className="text-pink-100 font-bold underline">
+                      詳細はこちら
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -79,13 +81,15 @@ const Pricing = () => {
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-                  <p className="my-6 text-lg font-medium text-orange-500">
+                  <p className="my-6 text-2xl font-medium text-orange-500">
                     Point 2
                   </p>
-                  <h3 className="text-3xl font-bold">出退勤管理の効率化</h3>
+                  <h3 className="text-3xl font-bold text-orange-100">
+                    出退勤管理の効率化
+                  </h3>
                   <p className="my-6 dark:text-gray-600">
                     出退勤状況が
-                    <strong className="text-orange-500 text-lg">
+                    <strong className="text-orange-100 text-xl font-bold">
                       一目でわかる
                     </strong>
                     ダッシュボード<br></br>
@@ -93,7 +97,9 @@ const Pricing = () => {
                     ドライバーは1タップで勤怠管理
                   </p>
                   <Link href="/AttendanceDetaile">
-                    <a className="text-blue-500 underline">詳細はこちら</a>
+                    <a className="text-pink-100 font-bold underline">
+                      詳細はこちら
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -117,20 +123,27 @@ const Pricing = () => {
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-                  <p className="my-6 text-lg font-medium text-orange-500">
+                  <p className="my-6 text-2xl font-medium text-orange-500">
                     Point 3
                   </p>
-                  <h3 className="text-3xl font-bold">精算業務の効率化</h3>
+                  <h3 className="text-3xl font-bold text-orange-100">
+                    精算業務の効率化
+                  </h3>
                   <p className="my-6 dark:text-gray-600">
                     ドライバーへの支払い金額確認・ドライバーからの請求を
                     ボタンひとつで簡単操作！<br></br>
                     面倒な計算も
-                    <strong className="text-orange-500 text-lg">
+                    <strong className="text-orange-100 text-xl font-bold">
                       システムが自動計算！
                     </strong>
                     <br></br>
                     システムで作られた請求書はPDFでダウンロード可能!
                   </p>
+                  <Link href="/AttendanceDetaile">
+                    <a className="text-pink-100 font-bold underline">
+                      詳細はこちら
+                    </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>
