@@ -5,9 +5,11 @@ import Header from "./Header";
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
-      {children}
-      <Footer />
+      <div className="bg-gradient-to-b from-white-500 to-white-300 w-full py-14">
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </>
   );
 };

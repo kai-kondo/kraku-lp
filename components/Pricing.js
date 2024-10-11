@@ -11,7 +11,7 @@ const Pricing = () => {
 
   return (
     <div
-      className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14"
+      className="bg-white-500 w-full py-14"
       id="pricing"
     >
       {/* プラン(無料) */}

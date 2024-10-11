@@ -27,7 +27,7 @@ const Pricing = () => {
               className="py-12 w-full px-8 mt-16"
               variants={scrollAnimation}
             >
-              <div className="flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row">
+              <div className="flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row bg-white-500">
                 <img
                   src="/assets/shift.png"
                   alt="VPN Illustrasi"
@@ -37,7 +37,7 @@ const Pricing = () => {
                   width={300} // ここで幅を指定
                   className="h-80 aspect-video"
                 />
-                <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
+                <div className="flex flex-col justify-center flex-1 p-6 bg-white-500">
                   <p className="my-6 text-2xl font-medium text-orange-500">
                     Point 1
                   </p>
@@ -69,7 +69,7 @@ const Pricing = () => {
               className="py-12 w-full px-8 mt-16"
               variants={scrollAnimation}
             >
-              <div className="flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row-reverse">
+              <div className="flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row-reverse bg-white-500">
                 <img
                   src="/assets/shift2.png"
                   alt="VPN Illustrasi"
@@ -79,7 +79,7 @@ const Pricing = () => {
                   width={300} // ここで幅を指定
                   className="h-80 aspect-video"
                 />
-                <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
+                <div className="flex flex-col justify-center flex-1 p-6 bg-white-500">
                   <p className="my-6 text-2xl font-medium text-orange-500">
                     Point 2
                   </p>
@@ -111,7 +111,7 @@ const Pricing = () => {
               className="py-12 w-full px-8 mt-16"
               variants={scrollAnimation}
             >
-              <div className="flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row">
+              <div className="flex flex-col overflow-hidden rounded-md shadow-lg lg:flex-row bg-white-500">
                 <img
                   src="/assets/shift3.png"
                   alt="VPN Illustrasi"
@@ -121,7 +121,7 @@ const Pricing = () => {
                   width={300} // ここで幅を指定
                   className="h-80 aspect-video"
                 />
-                <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
+                <div className="flex flex-col justify-center flex-1 p-6 bg-white-500">
                   <p className="my-6 text-2xl font-medium text-orange-500">
                     Point 3
                   </p>
