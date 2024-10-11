@@ -7,8 +7,13 @@ export default function Home() {
       <SeoHead title="業務管理システムならケイラクラウド" />
       <Layout>
         <main className="pt-16">
-          <section className=" dark:text-gray-800">
-            <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
+          <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <img
+              class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
+              alt="hero"
+              src="/assets/shift.png"
+            />
+            <div class="text-center lg:w-2/3 w-full">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl text-orange-500">
                   ドライバーシフトの効率化
@@ -17,6 +22,10 @@ export default function Home() {
                   毎月のドライバーのシフト管理にかかる時間を減少できます。
                 </p>
               </div>
+            </div>
+          </div>
+          <section className=" dark:text-gray-800">
+            <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
               <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                 <div>
                   <h3 className="text-2xl font-bold tracking-tight sm:text-3xl text-orange-500">

@@ -28,7 +28,7 @@ const UsageFlow = () => {
         </ScrollAnimationWrapper>
 
         <motion.div variants={scrollAnimation}>
-          <section className="dark:bg-gray-100 dark:text-gray-800">
+          <section className="dark:text-gray-800">
             <div className="container mx-auto flex flex-col p-4 lg:p-6">
               <div className="divide-y dark:divide-gray-300">
                 {/* Step 1 */}

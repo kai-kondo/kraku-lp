@@ -16,9 +16,14 @@ export default function Home() {
                 src="/assets/shift2.png"
               />
               <div class="text-center lg:w-2/3 w-full">
-                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-gray-900">
-                  出退勤管理の効率化
-                </h1>
+                <div>
+                  <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl text-orange-500">
+                    出退勤管理の効率化
+                  </h2>
+                  <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-600">
+                    ドライバーの出退勤状況をダッシュボードから一目で確認することができます。
+                  </p>
+                </div>
               </div>
             </div>
             <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">

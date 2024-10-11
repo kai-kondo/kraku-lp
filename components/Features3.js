@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import ButtonPrimary from "./misc/ButtonPrimary";
 import Link from "next/link";
 
 
@@ -38,17 +39,17 @@ const Pricing = () => {
                   className="h-80 aspect-video"
                 />
                 <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-                  <p className="my-6 text-lg font-medium text-orange-500">
+                  <p className="my-6 text-2xl font-medium text-pink-100">
                     Point 1
                   </p>
-                  <h3 className="text-3xl font-bold">
+                  <h3 className="text-3xl font-bold text-orange-100">
                     ドライバーシフト管理の効率化
                   </h3>
                   <p className="my-6 dark:text-gray-600">
                     システムを使用しドライバーから希望シフトを提出<br></br>
                     事業主はその状況を元に各ドライバーのシフトを調整<br></br>
                     画面上を
-                    <strong className="text-orange-500 text-lg">
+                    <strong className="text-orange-100 text-xl font-bold">
                       ドラッグ&ドロップで操作
                     </strong>
                     するなど簡単！
