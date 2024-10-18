@@ -42,23 +42,24 @@ const Pricing = () => {
               link: "/DetailPage",
             },
             {
-              imgSrc: "/assets/shift2.png",
-              point: "Point 1",
-              title: "ドライバーシフト管理の効率化",
+              imgSrc: "/assets/shift.png",
+              point: "Point 2",
+              title: "出退勤管理の効率化",
               description: (
                 <>
-                  システムを使用しドライバーから希望シフトを提出
-                  <br />
-                  事業主はその状況を元に各ドライバーのシフトを調整
-                  <br />
-                  画面上を
+                  出退勤状況が
                   <strong className="text-orange-100 text-xl font-bold">
-                    ドラッグ&ドロップで操作
+                    一目でわかる
                   </strong>
-                  するなど簡単！
+                  ダッシュボード
+                  <br />
+                  出退勤情報をリアルタイムで管理画面に反映
+                  <br />
+                  ドライバーは1タップで勤怠管理
                 </>
               ),
-              link: "/DetailPage",
+              link: "/AttendanceDetaile",
+              reverse: true,
             },
             {
               imgSrc: "/assets/shift3.png",
