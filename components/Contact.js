@@ -48,7 +48,7 @@ const Contact = () => {
                     <h5 className="text-black-600 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-medium">
                       まずは無料プランに登録！
                     </h5>
-                    <p>Lケイラクラウドを初めてみよう！</p>
+                    <p>ケイラクラウドを初めてみよう！</p>
                   </div>
                   <ButtonPrimary>Get Started</ButtonPrimary>
                 </div>

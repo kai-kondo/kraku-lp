@@ -1,407 +1,373 @@
-import React, { useMemo } from "react";
-import Image from "next/image";
-import ButtonOutline from "./misc/ButtonOutline.";
+import React from "react";
 import { motion } from "framer-motion";
-import getScrollAnimation from "../utils/getScrollAnimation";
-import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
-import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-scroll"; // 追加
 
 const Pricing = () => {
-  const scrollAnimation = useMemo(() => getScrollAnimation(), []);
+  const pricingPlans = [
+    {
+      title: "Normal",
+      price: "￥15,000",
+      description: "まずはお手軽に始めたい企業向け",
+      features: [
+        <>
+          ユーザー数: <span className="text-blue-100 text-xl">1~10人まで</span>{" "}
+          {/* 色指定 */}
+        </>,
+        "元請け企業数:無制限",
+      ],
+      colorClass: "bg-gray-100",
+      titleColor: "text-blue-100",
+      priceColor: "text-blue-100",
+      buttonColor: "bg-blue-100",
+      buttonTextColor: "text-white-500",
+      buttonHoverColor: "bg-blue-100",
+      borderColor: "border-blue-100", // 外枠の色
+    },
+    {
+      title: "Standard",
+      price: "￥40,000",
+      description: "10~50人以内のクルーを抱えている企業向け",
+      features: [
+        <>
+          ユーザー数: <span className="text-blue-400 text-xl">1~50人まで</span>{" "}
+          {/* 色指定 */}
+        </>,
+        "元請け企業数:無制限",
+      ],
+      colorClass: "bg-violet-600 text-gray-50",
+      titleColor: "text-blue-400",
+      priceColor: "text-blue-400",
+      buttonColor: "bg-blue-400",
+      buttonTextColor: "text-white-500",
+      buttonHoverColor: "bg-blue-400",
+      borderColor: "border-blue-400", // 外枠の色
+    },
+    {
+      title: "Premium",
+      price: "￥70,000",
+      description: "大人数のドライバーを抱えている企業向け",
+      features: [
+        <>
+          ユーザー数: <span className="text-blue-500 text-xl">無制限</span>{" "}
+          {/* 色指定 */}
+        </>,
+        "元請け企業数:無制限",
+      ],
+      colorClass: "bg-gray-50",
+      titleColor: "text-blue-500",
+      priceColor: "text-blue-500",
+      buttonColor: "bg-blue-500",
+      buttonTextColor: "text-white-500",
+      buttonHoverColor: "bg-blue-500",
+      borderColor: "border-blue-500", // 外枠の色
+    },
+  ];
+
+  const pricingPlans2 = [
+    {
+      title: "Normal",
+      price: "￥9,800",
+      description: "まずはお手軽に始めたい企業向け",
+      features: [
+        <>
+          ユーザー数: <span className="text-blue-100 text-xl">1~10人まで</span>{" "}
+          {/* 色指定 */}
+        </>,
+        "元請け企業数:無制限",
+      ],
+      colorClass: "bg-gray-100",
+      titleColor: "text-blue-100",
+      priceColor: "text-blue-100",
+      buttonColor: "bg-blue-100",
+      buttonTextColor: "text-white-500",
+      buttonHoverColor: "bg-blue-100",
+      borderColor: "border-blue-100",
+    },
+    {
+      title: "Standard",
+      price: "￥29,800",
+      description: "10~50人以内のクルーを抱えている企業向け",
+      features: [
+        <>
+          ユーザー数: <span className="text-blue-400 text-xl">1~50人まで</span>{" "}
+          {/* 色指定 */}
+        </>,
+        "元請け企業数:無制限",
+      ],
+      colorClass: "bg-violet-600 text-gray-50",
+      titleColor: "text-blue-400",
+      priceColor: "text-blue-400",
+      buttonColor: "bg-blue-400",
+      buttonTextColor: "text-white-500",
+      buttonHoverColor: "bg-blue-400",
+      borderColor: "border-blue-400", // 外枠の色
+    },
+    {
+      title: "Premium",
+      price: "￥59,800",
+      description: "大人数のドライバーを抱えている企業向け",
+      features: [
+        <>
+          ユーザー数: <span className="text-blue-500 text-xl">無制限</span>{" "}
+          {/* 色指定 */}
+        </>,
+        "元請け企業数:無制限",
+      ],
+      colorClass: "bg-gray-50",
+      titleColor: "text-blue-500",
+      priceColor: "text-blue-500",
+      buttonColor: "bg-blue-500",
+      buttonTextColor: "text-white-500",
+      buttonHoverColor: "bg-blue-500",
+      borderColor: "border-blue-500", // 外枠の色
+    },
+  ];
+
+  const pricingPlans3 = [
+    {
+      title: "Trial",
+      price: "￥0",
+      description: "お試し感覚で始めたい企業向け",
+      features: [
+        <>
+          ユーザー数: <span className="text-pink-100 text-xl">1~5人まで</span>{" "}
+          {/* 色指定 */}
+        </>,
+        "元請け企業数:2社",
+      ],
+      colorClass: "bg-violet-600 text-gray-50",
+      titleColor: "text-pink-100",
+      priceColor: "text-pink-100",
+      buttonColor: "bg-pink-100",
+      buttonTextColor: "text-white-500",
+      buttonHoverColor: "bg-pink-100",
+      borderColor: "border-pink-100", // 外枠の色
+    },
+  ];
 
   return (
-    <div
-      className="bg-white-500 w-full py-14"
-      id="pricing"
-    >
-      {/* プラン(無料) */}
-      <div className="flex flex-col w-full" id="pricing">
-        <ScrollAnimationWrapper>
-          <motion.h3
-            variants={scrollAnimation}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-relaxed text-center"
-          >
-            プラン
-          </motion.h3>
-        </ScrollAnimationWrapper>
-
-        <ScrollAnimationWrapper>
-          <motion.p
-            variants={scrollAnimation}
-            className="leading-normal w-10/12 sm:w-7/12 lg:w-6/12 mx-auto my-2 text-center text-2xl"
-            style={{ marginTop: "8rem" }}
-          >
-            無料プランの場合
-          </motion.p>
-        </ScrollAnimationWrapper>
-
-        <ScrollAnimationWrapper className="flex justify-center mt-4">
-          <motion.div
-            variants={scrollAnimation}
-            className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
-            whileHover={{
-              scale: 1.1,
-              transition: {
-                duration: 0.2,
-              },
-            }}
-          >
-            <div className="p-4 lg:p-0 mt-6 lg:mt-8">
-              <Image
-                src="/assets/undraw_printing_invoices_-5-r4r.svg"
-                width={145}
-                height={165}
-                alt="Standard Plan"
-              />
-            </div>
-            <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-              Free Plan{" "}
-            </p>
-            <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
-              <li className="relative check custom-list my-2">
-                ユーザー数: 1~5人まで
-              </li>
-              <li className="relative check custom-list my-2">
-                元請け企業数: 2社まで
-              </li>
-            </ul>
-            <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-              <p className="text-2xl text-black-600 text-center mb-4 ">FREE</p>
-              <ScrollLink
-                to="contact"
-                smooth={true}
-                duration={500}
-                offset={-100} // オフセットを調整して、スクロール位置を微調整
+    <section className="py-20 dark:bg-gray-100 dark:text-gray-800">
+      {/* 無料プラン */}
+      <div className="container px-4 mx-auto">
+        <div className="max-w-2xl mx-auto mb-16 text-center">
+          <h2 className="text-4xl font-bold lg:text-5xl">プラン</h2>
+        </div>
+        <motion.div
+          className="max-w-2xl mx-auto mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 1 }}
+        >
+          <span className="font-bold tracking-wider uppercase dark:text-violet-600 text-3xl">
+            FREEプラン
+          </span>
+        </motion.div>
+        <div className="flex flex-wrap justify-center items-stretch -mx-4">
+          {pricingPlans3.map((plan, index) => (
+            <div
+              key={index}
+              className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0"
+            >
+              <motion.div
+                className={`flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 border-2 ${plan.colorClass} ${plan.borderColor}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
               >
-                <ButtonOutline>このプランで始める</ButtonOutline>
-              </ScrollLink>
+                <div className="space-y-2">
+                  <h4 className={`text-2xl font-bold ${plan.titleColor}`}>
+                    {plan.title}
+                  </h4>
+                  <span className={`text-6xl font-bold ${plan.priceColor}`}>
+                    {plan.price}
+                  </span>
+                  <span className="text-sm tracking-wide">/月</span>
+                </div>
+                <p className="leading-relaxed">{plan.description}</p>
+                <ul className="flex-1 space-y-2">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li
+                      key={featureIndex}
+                      className="flex items-center space-x-2 font-bold"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="flex-shrink-0 w-6 h-6 dark:text-violet-600"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="contact" smooth={true} duration={500}>
+                  <button
+                    type="button"
+                    className={`inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded-lg border-2 ${plan.buttonColor} ${plan.buttonTextColor} transition duration-300 ease-in-out hover:${plan.buttonHoverColor}`}
+                  >
+                    Get Started
+                  </button>
+                </Link>
+              </motion.div>
             </div>
-          </motion.div>
-        </ScrollAnimationWrapper>
+          ))}
+        </div>
       </div>
 
-      {/* プラン(6ヶ月) */}
-      <div className="flex flex-col w-full">
-        <ScrollAnimationWrapper>
-          <motion.h3
-            variants={scrollAnimation}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-relaxed"
-            style={{ marginTop: "4rem" }}
-          ></motion.h3>
-          <motion.p
-            variants={scrollAnimation}
-            className="leading-normal w-10/12 sm:w-7/12 lg:w-6/12 mx-auto my-2 text-center text-2xl"
-          >
+      {/* 6ヶ月プラン */}
+      <div className="container px-4 mx-auto">
+        <div className="max-w-2xl mx-auto mb-16 text-center"></div>
+        <motion.div
+          className="max-w-2xl mx-auto mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 1 }}
+        >
+          <span className="font-bold tracking-wider uppercase dark:text-violet-600 text-3xl">
             6ヶ月契約の場合
-          </motion.p>
-        </ScrollAnimationWrapper>
-
-        <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-12 py-8 lg:py-12 px-6 sm:px-0 lg:px-6">
-          {/* 1 */}
-          <ScrollAnimationWrapper className="flex justify-center">
-            <motion.div
-              variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
-              whileHover={{
-                scale: 1.1,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
+          </span>
+        </motion.div>
+        <div className="flex flex-wrap items-stretch -mx-4">
+          {pricingPlans.map((plan, index) => (
+            <div
+              key={index}
+              className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0"
             >
-              <div className="p-4 lg:p-0 mt-6 lg:mt-16">
-                <Image
-                  src="/assets/undraw_vault_re_s4my.svg"
-                  width={145}
-                  height={165}
-                  alt="Free Plan"
-                />
-              </div>
-              <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                Normal Plan{" "}
-              </p>
-              <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
-                <li className="relative check custom-list my-2">
-                  ユーザー数: 1~10人まで
-                </li>
-                <li className="relative check custom-list my-2">
-                  元請け企業数: 無制限
-                </li>
-              </ul>
-              <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-                <p className="text-2xl text-black-600 text-center mb-4 ">
-                  ￥15,000<span className="text-black-500">/ 月</span>
-                </p>
-                <ScrollLink
-                  to="contact"
-                  smooth={true}
-                  duration={500}
-                  offset={-100} // オフセットを調整して、スク���ール位置を微調整
-                >
-                  <ButtonOutline>このプランで始める</ButtonOutline>
-                </ScrollLink>
-              </div>
-            </motion.div>
-          </ScrollAnimationWrapper>
-
-          {/* 2 */}
-          <ScrollAnimationWrapper className="flex justify-center">
-            <motion.div
-              variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
-              whileHover={{
-                scale: 1.1,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
-            >
-              <div className="p-4 lg:p-0 mt-6 lg:mt-16">
-                <Image
-                  src="/assets/undraw_vault_re_s4my.svg"
-                  width={145}
-                  height={165}
-                  alt="Standard Plan"
-                />
-              </div>
-              <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                Standard Plan{" "}
-              </p>
-              <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
-                <li className="relative check custom-list my-2">
-                  ユーザー数: 1~50人まで
-                </li>
-                <li className="relative check custom-list my-2">
-                  元請け企業数: 無制限
-                </li>
-              </ul>
-              <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-                <p className="text-2xl text-black-600 text-center mb-4 ">
-                  ￥40,000 <span className="text-black-500">/ 月</span>
-                </p>
-                <ScrollLink
-                  to="contact"
-                  smooth={true}
-                  duration={500}
-                  offset={-100} // オフセットを調整して、スクロール位置を微調整
-                >
-                  <ButtonOutline>このプランで始める</ButtonOutline>
-                </ScrollLink>
-              </div>
-            </motion.div>
-          </ScrollAnimationWrapper>
-
-          {/* 3 */}
-          <ScrollAnimationWrapper className="flex justify-center">
-            <motion.div
-              variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
-              whileHover={{
-                scale: 1.1,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
-            >
-              <div className="p-4 lg:p-0 mt-6 lg:mt-16">
-                <Image
-                  src="/assets/undraw_vault_re_s4my.svg"
-                  width={145}
-                  height={165}
-                  alt="Premium Plan"
-                />
-              </div>
-              <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                Premium Plan{" "}
-              </p>
-              <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
-                <li className="relative check custom-list my-2">
-                  ユーザー数: 無制限
-                </li>
-                <li className="relative check custom-list my-2">
-                  元請け企業数: 無制限
-                </li>
-              </ul>
-              <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-                <p className="text-2xl text-black-600 text-center mb-4 ">
-                  ￥70,000 <span className="text-black-500">/ 月</span>
-                </p>
-
-                <ScrollLink
-                  to="contact"
-                  smooth={true}
-                  duration={500}
-                  offset={-100} // オフセットを調整して、スクロール位置を微調整
-                >
-                  <ButtonOutline>このプランで始める</ButtonOutline>
-                </ScrollLink>
-              </div>
-            </motion.div>
-          </ScrollAnimationWrapper>
+              <motion.div
+                className={`flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 border-2 ${plan.colorClass} ${plan.borderColor}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="space-y-2">
+                  <h4 className={`text-2xl font-bold ${plan.titleColor}`}>
+                    {plan.title}
+                  </h4>
+                  <span className={`text-6xl font-bold ${plan.priceColor}`}>
+                    {plan.price}
+                  </span>
+                  <span className="text-sm tracking-wide">/月</span>
+                </div>
+                <p className="leading-relaxed">{plan.description}</p>
+                <ul className="flex-1 space-y-2">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li
+                      key={featureIndex}
+                      className="flex items-center space-x-2 font-bold"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="flex-shrink-0 w-6 h-6 dark:text-violet-600"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="contact" smooth={true} duration={500}>
+                  <button
+                    type="button"
+                    className={`inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded-lg border-2 ${plan.buttonColor} ${plan.buttonTextColor} transition duration-300 ease-in-out hover:${plan.buttonHoverColor}`}
+                  >
+                    Get Started
+                  </button>
+                </Link>
+              </motion.div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* (1年) */}
-      <div className="flex flex-col w-full">
-        <ScrollAnimationWrapper>
-          <motion.h3
-            variants={scrollAnimation}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-relaxed"
-            style={{ marginTop: "4rem" }}
-          ></motion.h3>
-          <motion.p
-            variants={scrollAnimation}
-            className="leading-normal w-10/12 sm:w-7/12 lg:w-6/12 mx-auto my-2 text-center text-2xl"
-          >
+      {/* 1年プラン */}
+      <div className="container px-4 mx-auto">
+        <div className="max-w-2xl mx-auto mb-16 text-center"></div>
+        <motion.div
+          className="max-w-2xl mx-auto mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 1 }}
+        >
+          <span className="font-bold tracking-wider uppercase dark:text-violet-600 text-3xl">
             1年契約の場合
-          </motion.p>
-        </ScrollAnimationWrapper>
-
-        <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-12 py-8 lg:py-12 px-6 sm:px-0 lg:px-6">
-          {/* 1 */}
-          <ScrollAnimationWrapper className="flex justify-center">
-            <motion.div
-              variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
-              whileHover={{
-                scale: 1.1,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
+          </span>
+        </motion.div>
+        <div className="flex flex-wrap items-stretch -mx-4">
+          {pricingPlans2.map((plan, index) => (
+            <div
+              key={index}
+              className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0"
             >
-              <div className="p-4 lg:p-0 mt-6 lg:mt-16">
-                <Image
-                  src="/assets/undraw_printing_invoices_-5-r4r.svg"
-                  width={145}
-                  height={165}
-                  alt="Free Plan"
-                />
-              </div>
-              <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                Normal Plan{" "}
-              </p>
-              <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
-                <li className="relative check custom-list my-2">
-                  ユーザー数: 1~10人まで
-                </li>
-                <li className="relative check custom-list my-2">
-                  元請け企業数: 無制限
-                </li>
-              </ul>
-              <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-                <p className="text-2xl text-black-600 text-center mb-4 ">
-                  ￥9,800<span className="text-black-500">/ 月</span>
-                </p>
-                <ScrollLink
-                  to="contact"
-                  smooth={true}
-                  duration={500}
-                  offset={-100} // オフセットを調整して、スクロール位置を微調整
-                >
-                  <ButtonOutline>このプランで始める</ButtonOutline>
-                </ScrollLink>
-              </div>
-            </motion.div>
-          </ScrollAnimationWrapper>
-
-          {/* 2 */}
-          <ScrollAnimationWrapper className="flex justify-center">
-            <motion.div
-              variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
-              whileHover={{
-                scale: 1.1,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
-            >
-              <div className="p-4 lg:p-0 mt-6 lg:mt-16">
-                <Image
-                  src="/assets/undraw_printing_invoices_-5-r4r.svg"
-                  width={145}
-                  height={165}
-                  alt="Standard Plan"
-                />
-              </div>
-              <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                Standard Plan{" "}
-              </p>
-              <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
-                <li className="relative check custom-list my-2">
-                  ユーザー数: 1~50人まで
-                </li>
-                <li className="relative check custom-list my-2">
-                  元請け企業数: 無制限
-                </li>
-              </ul>
-              <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-                <p className="text-2xl text-black-600 text-center mb-4 ">
-                  ￥29,800 <span className="text-black-500">/ 月</span>
-                </p>
-                <ScrollLink
-                  to="contact"
-                  smooth={true}
-                  duration={500}
-                  offset={-100} // オフセットを調整して、スクロール位置を微調整
-                >
-                  <ButtonOutline>このプランで始める</ButtonOutline>
-                </ScrollLink>
-              </div>
-            </motion.div>
-          </ScrollAnimationWrapper>
-
-          {/* 3 */}
-          <ScrollAnimationWrapper className="flex justify-center">
-            <motion.div
-              variants={scrollAnimation}
-              className="flex flex-col justify-center items-center border-2 border-gray-500 rounded-xl py-4 px-6 lg:px-12 xl:px-20 max-w-md"
-              whileHover={{
-                scale: 1.1,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
-            >
-              <div className="p-4 lg:p-0 mt-6 lg:mt-16">
-                <Image
-                  src="/assets/undraw_printing_invoices_-5-r4r.svg"
-                  width={145}
-                  height={165}
-                  alt="Premium Plan"
-                />
-              </div>
-              <p className="text-lg text-black-600 font-medium capitalize my-2 sm:my-7">
-                Premium Plan{" "}
-              </p>
-              <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-black-500 flex-grow">
-                <li className="relative check custom-list my-2">
-                  ユーザー数: 無制限
-                </li>
-                <li className="relative check custom-list my-2">
-                  元請け企業数: 無制限
-                </li>
-              </ul>
-              <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-                <p className="text-2xl text-black-600 text-center mb-4 ">
-                  ￥59,800 <span className="text-black-500">/ 月</span>
-                </p>
-
-                <ScrollLink
-                  to="contact"
-                  smooth={true}
-                  duration={500}
-                  offset={-100} // オフセットを調整して、スクロール位置を微調整
-                >
-                  <ButtonOutline>このプランで始める</ButtonOutline>
-                </ScrollLink>
-              </div>
-            </motion.div>
-          </ScrollAnimationWrapper>
+              <motion.div
+                className={`flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 border-2 ${plan.colorClass} ${plan.borderColor}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="space-y-2">
+                  <h4 className={`text-2xl font-bold ${plan.titleColor}`}>
+                    {plan.title}
+                  </h4>
+                  <span className={`text-6xl font-bold ${plan.priceColor}`}>
+                    {plan.price}
+                  </span>
+                  <span className="text-sm tracking-wide">/月</span>
+                </div>
+                <p className="leading-relaxed">{plan.description}</p>
+                <ul className="flex-1 space-y-2">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li
+                      key={featureIndex}
+                      className="flex items-center space-x-2 font-bold"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="flex-shrink-0 w-6 h-6 dark:text-violet-600"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link to="contact" smooth={true} duration={500}>
+                  <button
+                    type="button"
+                    className={`inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded-lg border-2 ${plan.buttonColor} ${plan.buttonTextColor} transition duration-300 ease-in-out hover:${plan.buttonHoverColor}`}
+                  >
+                    Get Started
+                  </button>
+                </Link>
+              </motion.div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
