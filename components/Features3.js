@@ -42,7 +42,7 @@ const Pricing = () => {
               link: "/DetailPage",
             },
             {
-              imgSrc: "/assets/shift2.png",
+              imgSrc: "/assets/shift.png",
               point: "Point 2",
               title: "出退勤管理の効率化",
               description: (
