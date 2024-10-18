@@ -1,14 +1,26 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import Image from "next/image";
 import Testimoni from "./Testimoni";
-import ButtonPrimary from "./misc/ButtonPrimary";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import { Link as ScrollLink } from "react-scroll";
+import ButtonPrimary from "./misc/ButtonPrimary";
 
 const UsageFlow = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
+
+  useEffect(() => {
+    // Formrunスクリプトを読み込む
+    const script = document.createElement("script");
+    script.src = "https://sdk.form.run/js/v2/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div
@@ -168,35 +180,15 @@ const UsageFlow = () => {
               <Testimoni />
             </motion.div>
           </ScrollAnimationWrapper>
+
+          {/* お問い合わせセクション */}
           <ScrollAnimationWrapper>
-            <motion.h3
-              variants={scrollAnimation}
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black-600 leading-normal w-9/12 sm: lg:w-4/12 mx-auto text-center mb-10 mt-10"
-              id="contact"
-            >
-              お問い合わせ{" "}
-            </motion.h3>
-
-            <motion.div
-              variants={scrollAnimation}
-              className="dark:text-gray-600 mt-2 "
-            >
-              ケイラクラウドに関する詳細情報・無料をご希望の⽅はこちらからご連絡ください。
-            </motion.div>
+            <div
+              className="formrun-embed mt-16"
+              data-formrun-form="@hayamizu-RKhStBWvHpMdxT9gzT4C"
+              data-formrun-redirect="true"
+            ></div>
           </ScrollAnimationWrapper>
-
-          <div className="flex justify-center mt-8">
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSeBMJPIFmdtlBVgPJWLGOEZKAfC34REPMNWwSfIWfXZ5JDMLg/viewform?embedded=true"
-              width="440"
-              height="982"
-              frameBorder="0" // 修正後
-              marginHeight="0" // 修正後
-              marginWidth="0" // 修正後
-            >
-              読み込んでいます…
-            </iframe>
-          </div>
 
           {/* ケイラクラウドを初めてみよう！ */}
           <ScrollAnimationWrapper className="relative w-full mt-16">

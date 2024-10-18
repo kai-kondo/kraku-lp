@@ -25,7 +25,7 @@ const Contact = () => {
             お問い合わせ{" "}
           </motion.h3>
         </ScrollAnimationWrapper>
-        
+
         <div className="flex justify-center mt-8">
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSeBMJPIFmdtlBVgPJWLGOEZKAfC34REPMNWwSfIWfXZ5JDMLg/viewform?embedded=true"
