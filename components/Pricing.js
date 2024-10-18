@@ -167,20 +167,24 @@ const Pricing = () => {
           {pricingPlans3.map((plan, index) => (
             <div
               key={index}
-              className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0"
+              className="flex w-full mb-8 sm:w-1/2 md:w-1/3 sm:px-4 lg:mb-0"
             >
               <motion.div
-                className={`flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 border-2 ${plan.colorClass} ${plan.borderColor}`}
+                className={`flex flex-grow flex-col p-4 space-y-6 rounded shadow sm:p-6 border-2 ${plan.colorClass} ${plan.borderColor}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="space-y-2">
-                  <h4 className={`text-2xl font-bold ${plan.titleColor}`}>
+                  <h4
+                    className={`text-xl sm:text-2xl font-bold ${plan.titleColor}`}
+                  >
                     {plan.title}
                   </h4>
-                  <span className={`text-6xl font-bold ${plan.priceColor}`}>
+                  <span
+                    className={`text-5xl sm:text-6xl font-bold ${plan.priceColor}`}
+                  >
                     {plan.price}
                   </span>
                   <span className="text-sm tracking-wide">/月</span>
