@@ -162,7 +162,7 @@ const UsageFlow = () => {
         </ScrollAnimationWrapper>
 
         {/* ケイラクラウドを初めてみよう！ */}
-        <ScrollAnimationWrapper className="relative w-full mt-16">
+        <ScrollAnimationWrapper className="relative w-full mt-8 mb-16">
           <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
             <div className="absolute rounded-xl py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-orange-500">
               <div className="flex flex-col text-left w-10/12 sm:w-7/12 lg:w-5/12 mb-6 sm:mb-0">
@@ -187,7 +187,7 @@ const UsageFlow = () => {
               </ScrollLink>
             </div>
             <div
-              className="absolute bg-black-600 opacity-5 w-11/12 rounded-lg h-60 sm:h-56 top-0 mt-8 mx-auto left-0 right-0"
+              className="absolute bg-black-600 opacity-5 w-11/12 rounded-lg h-60 sm:h-56 top-0 mt-12 mx-auto left-0 right-0" // mtを8から12に変更
               style={{ filter: "blur(114px)" }}
             />
           </motion.div>

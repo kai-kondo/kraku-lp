@@ -36,11 +36,12 @@ const Hero = ({
           variants={scrollAnimation}
         >
           <div className=" flex flex-col justify-center items-start row-start-2 sm:row-start-1">
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal">
-              軽配送業の経営をラクに{" "}
-              <strong className="text-orange-500 font-bold">
+            <h1 className="text-1xl lg:text-3xl xl:text-4xl font-bold text-black-600 leading-normal">
+              軽配送業の経営をラクに <br></br>
+            </h1>
+            <h1 className="text-orange-500 font-bold text-4xl lg:text-5xl xl:text-6xl mt-2">
+
                 ケイラクラウド
-              </strong>
             </h1>
             <p className="text-black-500 mt-4 mb-6 text-xl font-bold">
               全ての機能を
