@@ -21,7 +21,7 @@ const Support = () => {
   }, []);
 
   return (
-    <section className="m-4 md:m-8  bg-white dark:text-gray-800">
+    <section className="m-4 md:m-8  bg-gradient-to-b from-white-300 to-white-500 w-full dark:text-gray-800">
       <div className="container mx-auto p-4 my-6 space-y-2 text-center">
         <h2 className="text-5xl font-bold">サポート</h2>
         <p className="dark:text-gray-600">
