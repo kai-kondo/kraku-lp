@@ -6,6 +6,7 @@ import Layout from "../components/Layout/Layout";
 import SeoHead from "../components/SeoHead";
 import UsageFlow from "../components/UsageFlow";
 import Features3 from "../components/Features3";
+import Support from "../components/Support";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Features3 />
         <Pricing />
         <UsageFlow />
+        <Support />
       </Layout>
     </>
   );

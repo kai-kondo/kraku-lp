@@ -24,7 +24,7 @@ const Pricing = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-gray-100 to-gray-200 w-full py-14">
+    <div className="bg-gradient-to-b from-gray-100 to-gray-300 w-full py-14">
       <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
         {/* 特徴 */}
         <div className="container mx-auto space-y-12" id="about">
@@ -37,7 +37,8 @@ const Pricing = () => {
             ケイラクラウドの特徴
           </motion.h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* グリッドレイアウト */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
                 imgSrc: "/assets/shift.png",
@@ -68,25 +69,25 @@ const Pricing = () => {
               },
             ].map((feature, index) => (
               <motion.div
-                className="flex flex-col items-center p-6 rounded-lg shadow-lg bg-white"
+                className="flex flex-col items-center p-6 lg:p-10 rounded-lg shadow-lg bg-white"
                 key={index}
-                initial={{ opacity: 0, y: 20 }} // 初期状態
+                initial={{ opacity: 0, y: 20 }}
                 animate={
                   isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                } // isVisible に基づくアニメーション
-                transition={{ duration: 0.5, delay: index * 0.1 }} // 遅延を使ってアニメーションを順番に表示
+                }
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <img
                   src={feature.imgSrc}
                   alt="Feature Illustration"
-                  className="h-40 w-auto mb-4 object-cover"
+                  className="h-40 w-auto lg:h-48 mb-4 object-cover"
                 />
                 <h3
                   className={`text-lg lg:text-2xl font-bold ${feature.textColor}`}
                 >
                   {feature.title}
                 </h3>
-                <p className="my-4 text-base text-gray-700 text-center">
+                <p className="my-4 text-base lg:text-lg text-gray-700 text-center">
                   {feature.description}
                 </p>
                 <Link href={feature.link}>
@@ -101,15 +102,17 @@ const Pricing = () => {
 
         {/* チュートリアル動画 */}
         <div className="container mx-auto space-y-12" id="tutorial">
+          {/* タイトルのアニメーション */}
           <motion.h3
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 leading-relaxed text-center mt-48"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 text-transparent bg-clip-text leading-relaxed text-center mt-48"
           >
-            チュートリアル動画
+            ケイラクラウドの機能を1分で紹介！
           </motion.h3>
 
+          {/* 動画プレースホルダー */}
           <motion.div
             className="py-12 w-full px-8 mt-16 flex justify-center items-center"
             initial={{ opacity: 0 }}
@@ -123,7 +126,7 @@ const Pricing = () => {
               alt="再生する"
               width="640"
               height="360"
-              className="cursor-pointer"
+              className="cursor-pointer rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out"
               onClick={() => {
                 const videoElement = document.getElementById("tutorial-video");
                 const thumbnailElement =
@@ -140,7 +143,7 @@ const Pricing = () => {
             {/* 動画コンテナ */}
             <motion.video
               id="tutorial-video"
-              className="w-full max-w-4xl hidden"
+              className="w-full max-w-4xl hidden rounded-lg"
               controls
               loop
               muted

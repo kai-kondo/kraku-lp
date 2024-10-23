@@ -38,14 +38,14 @@ module.exports = {
       },
       gray: {
         100: "#EEEFF2",
-        400: "#AFB5C0",
+        400: "#F2F1F0",
         500: "#DDDDDD",
       },
 
       pink: {
         100: "#E291DE",
         400: "#AFB5C0",
-        500: "#DDDDDD",
+        500: "#0897B4",
       },
 
       blue: {

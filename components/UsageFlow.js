@@ -4,8 +4,6 @@ import Testimoni from "./Testimoni";
 import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
-import { Link as ScrollLink } from "react-scroll";
-import ButtonPrimary from "./misc/ButtonPrimary";
 
 const steps = [
   {
@@ -144,52 +142,6 @@ const UsageFlow = () => {
             transition={{ duration: 0.6 }}
           >
             <Testimoni />
-          </motion.div>
-        </ScrollAnimationWrapper>
-
-        {/* お問い合わせセクション */}
-        <ScrollAnimationWrapper>
-          <motion.div
-            id="contact"
-            className="formrun-embed mt-16"
-            data-formrun-form="@hayamizu-RKhStBWvHpMdxT9gzT4C"
-            data-formrun-redirect="true"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
-          />
-        </ScrollAnimationWrapper>
-
-        {/* ケイラクラウドを初めてみよう！ */}
-        <ScrollAnimationWrapper className="relative w-full mt-8 mb-16">
-          <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
-            <div className="absolute rounded-xl py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-orange-500">
-              <div className="flex flex-col text-left w-10/12 sm:w-7/12 lg:w-5/12 mb-6 sm:mb-0">
-                <h5 className="text-white-500 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-medium">
-                  <strong>
-                    ケイラクラウドを
-                    <br />
-                    初めてみよう！
-                  </strong>
-                </h5>
-                <p className="text-gray-500">まずは無料プランに登録！</p>
-              </div>
-              <ScrollLink
-                to="contact"
-                smooth={true}
-                duration={500}
-                offset={-100}
-              >
-                <ButtonPrimary className="bg-orange-500">
-                  無料プランで始める
-                </ButtonPrimary>
-              </ScrollLink>
-            </div>
-            <div
-              className="absolute bg-black-600 opacity-5 w-11/12 rounded-lg h-60 sm:h-56 top-0 mt-12 mx-auto left-0 right-0" // mtを8から12に変更
-              style={{ filter: "blur(114px)" }}
-            />
           </motion.div>
         </ScrollAnimationWrapper>
       </div>
