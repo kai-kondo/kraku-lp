@@ -24,7 +24,7 @@ const Pricing = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-gray-100 to-gray-300 w-full py-14">
+    <div className="bg-gradient-to-b from-white-300 to-white-500 w-full py-14">
       <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
         {/* 特徴 */}
         <div className="container mx-auto space-y-12" id="about">

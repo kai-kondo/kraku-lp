@@ -15,7 +15,7 @@ const Pricing = () => {
         </>,
         "元請け企業数:無制限",
       ],
-      colorClass: "bg-gray-100",
+      colorClass: "bg-violet-600 text-gray-50",
       titleColor: "text-blue-100",
       priceColor: "text-blue-100",
       buttonColor: "bg-blue-100",
@@ -75,7 +75,7 @@ const Pricing = () => {
         </>,
         "元請け企業数:無制限",
       ],
-      colorClass: "bg-gray-100",
+      colorClass: "bg-violet-600 text-gray-50",
       titleColor: "text-blue-100",
       priceColor: "text-blue-100",
       buttonColor: "bg-blue-100",
@@ -146,7 +146,10 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 dark:bg-gray-100 dark:text-gray-800">
+    <section
+      id="pricing"
+      className="py-20 bg-gradient-to-b from-white-300 to-white-500 w-full dark:text-gray-800"
+    >
       {/* 無料プラン */}
       <div className="container px-4 mx-auto">
         <div className="max-w-2xl mx-auto mb-16 text-center">
