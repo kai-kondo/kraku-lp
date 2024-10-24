@@ -37,7 +37,7 @@ const Feature = () => {
             variants={fadeIn}
           >
             <h3 className="text-2xl lg:text-1xl font-semibold leading-relaxed text-black-600 mt-4 mb-2">
-              ケイラクラウドなら全て解決！
+              ケイラクラウドなら！
             </h3>
             <h2 className="text-3xl lg:text-4xl font-bold leading-relaxed text-orange-500 mt-2 mb-4">
               ケイラクラウドとは？
@@ -66,14 +66,14 @@ const Feature = () => {
           </motion.div>
         </ScrollAnimationWrapper>
         <ScrollAnimationWrapper className="flex w-full justify-start">
-          <motion.div className="h-full w-full p-4" variants={scrollAnimation}>
+          <motion.div className="h-full w-full p-4 mb-2" variants={scrollAnimation}>
             <Image
-              src="/assets/feuter.png"
+              src="/assets/kraku20.png"
               alt="VPN Illustration"
               layout="intrinsic" // or "fixed" depending on your need
               quality={100}
-              height={800}
-              width={1200}
+              height={1000}
+              width={1000}
             />
           </motion.div>
         </ScrollAnimationWrapper>

@@ -65,6 +65,9 @@ const UsageFlow = () => {
             transition={{ duration: 0.8 }}
           >
             ご利用までの流れ
+            <div className="flex mt-4 justify-center">
+              <div className="w-16 h-1 rounded-full bg-blue-500 inline-flex"></div>
+            </div>
           </motion.h3>
         </ScrollAnimationWrapper>
 
@@ -129,6 +132,9 @@ const UsageFlow = () => {
             transition={{ duration: 0.8 }}
           >
             ご利用者の声
+            <div className="flex mt-4 justify-center">
+              <div className="w-16 h-1 rounded-full bg-blue-500 inline-flex"></div>
+            </div>
           </motion.h3>
         </ScrollAnimationWrapper>
 

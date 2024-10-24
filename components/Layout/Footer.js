@@ -58,7 +58,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <p className="text-gray-400">
+          <p className="text-gray-600">
             ©{new Date().getFullYear()} - ケイラクラウド
           </p>
         </div>
@@ -71,10 +71,20 @@ const Footer = () => {
               duration={500}
               offset={-100} // オフセットを調整して、スクロール位置を微調整
             >
-              <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+              <li className="my-2 hover:text-orange-500 cursor-pointer transition-all font-semibold">
                 特徴{" "}
               </li>
             </LinkScroll>
+
+            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+              ・シフト管理の効率化
+            </li>
+            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+              ・出退勤管理の効率化
+            </li>
+            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+              ・生産業務の効率化
+            </li>
 
             <LinkScroll
               to="pricing"
@@ -82,7 +92,7 @@ const Footer = () => {
               duration={500}
               offset={-100} // オフセットを調整して、スクロール位置を微調整
             >
-              <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+              <li className="my-2 hover:text-orange-500 cursor-pointer transition-all font-semibold">
                 プラン/価格{" "}
               </li>
             </LinkScroll>
@@ -93,7 +103,7 @@ const Footer = () => {
               duration={500}
               offset={-100} // オフセットを調整して、スクロール位置を微調整
             >
-              <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+              <li className="my-2 hover:text-orange-500 cursor-pointer transition-all font-semibold">
                 利用者の声{" "}
               </li>
             </LinkScroll>
@@ -108,12 +118,12 @@ const Footer = () => {
               duration={500}
               offset={-100} // オフセットを調整して、スクロール位置を微調整
             >
-              <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+              <li className="my-2 hover:text-orange-500 cursor-pointer transition-all font-semibold">
                 チュートリアル
               </li>
             </LinkScroll>
 
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all font-semibold">
               <a
                 href="https://support.kraku.jp/"
                 target="_blank"
@@ -122,12 +132,22 @@ const Footer = () => {
                 操作マニュアル
               </a>
             </li>
+
+            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all font-semibold">
+              <a
+                href="https://lin.ee/jixRRYe"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                公式ライン追加
+              </a>
+            </li>
           </ul>
         </div>
         <div className="row-span-2 sm:col-span-2 sm:col-start-11 sm:col-end-13 flex flex-col">
           <p className="text-black-600 mb-4 font-bold text-lg">運営会社</p>
           <ul className="text-black-500">
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all">
+            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all font-semibold">
               <a
                 href="https://asty-inc.com/"
                 target="_blank"

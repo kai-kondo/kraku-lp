@@ -154,7 +154,11 @@ const Pricing = () => {
       <div className="container px-4 mx-auto">
         <div className="max-w-2xl mx-auto mb-16 text-center">
           <h2 className="text-4xl font-bold lg:text-5xl">プラン</h2>
+          <div className="flex mt-4 justify-center">
+            <div className="w-16 h-1 rounded-full bg-blue-500 inline-flex"></div>
+          </div>
         </div>
+
         <motion.div
           className="max-w-2xl mx-auto mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}

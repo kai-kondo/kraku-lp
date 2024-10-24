@@ -35,6 +35,9 @@ const Pricing = () => {
             transition={{ duration: 0.5 }}
           >
             ケイラクラウドの特徴
+            <div className="flex mt-4 justify-center">
+              <div className="w-16 h-1 rounded-full bg-blue-500 inline-flex"></div>
+            </div>
           </motion.h3>
 
           {/* グリッドレイアウト */}

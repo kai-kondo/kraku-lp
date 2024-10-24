@@ -45,7 +45,7 @@ const Hero = ({
             </h1>
             <p className="text-black-500 mt-4 mb-6 text-xl font-bold">
               全ての機能を
-              <strong className="font-bold text-orange-100 text-3xl">
+              <strong className="font-bold text-orange-500 text-3xl">
                 無料
               </strong>
               で利用可能！<br></br>

@@ -4,6 +4,7 @@ import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import { Link as ScrollLink } from "react-scroll";
 import ButtonPrimary from "./misc/ButtonPrimary";
 import getScrollAnimation from "../utils/getScrollAnimation";
+import ButtonPrimary2 from "./misc/ButtonPrimary2";
 
 
 const Support = () => {
@@ -22,13 +23,26 @@ const Support = () => {
 
   return (
     <section className="m-4 md:m-8  bg-gradient-to-b from-white-300 to-white-500 w-full dark:text-gray-800">
+      {/* サポートセクション */}
       <div className="container mx-auto p-4 my-6 space-y-2 text-center">
-        <h2 className="text-5xl font-bold">サポート</h2>
-        <p className="dark:text-gray-600">
+        <motion.h2
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl sm:text-5xl font-bold"
+        >
+          サポート
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="dark:text-gray-600"
+        >
           ケイラクラウドを知り尽くしたスタッフが
           <br />
           製品の導入や操作方法から業務の相談までお答えいたします。
-        </p>
+        </motion.p>
       </div>
 
       <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 bg-gray-400 rounded-3xl text-center">
@@ -94,7 +108,14 @@ const Support = () => {
             ),
           },
         ].map((item, index) => (
-          <div key={index} className="flex flex-col items-center p-4">
+          <motion.div
+            key={index}
+            className="flex flex-col items-center p-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+          >
             <img
               src={item.imgSrc}
               alt={item.title}
@@ -104,8 +125,68 @@ const Support = () => {
             <div className="space-y-1 leading-tight">
               <p>{item.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
+      </div>
+
+      {/* セキュリティセクション */}
+      <div className="container px-5 py-24 mx-auto">
+        <div className="text-center mb-20">
+          <motion.h1
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="sm:text-4xl text-2xl font-bold title-font text-gray-900 mb-4"
+          >
+            セキュリティ
+          </motion.h1>
+          <div className="flex mt-6 justify-center">
+            <div className="w-16 h-1 rounded-full bg-blue-500 inline-flex"></div>
+          </div>
+        </div>
+        <div className="flex flex-wrap justify-center -m-4">
+          <motion.div
+            className="p-4 md:w-1/2 flex flex-col text-center items-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-5 flex-shrink-0">
+              <img src="./assets/aws.png" alt="AWS" className="w-10 h-10" />
+            </div>
+            <div className="flex-grow">
+              <h2 className="text-gray-900 text-lg title-font font-bold mb-3">
+                AWSを採用
+              </h2>
+              <p className="leading-relaxed text-base">
+                本製品は「Amazon Web Services」を採用。
+                <br />
+                データ暗号化による強力な保護、24時間365日の監視体制、柔軟なアクセス管理、そしてグローバルなセキュリティ規制への対応といった高度なセキュリティを実現しています。
+              </p>
+            </div>
+          </motion.div>
+          <motion.div
+            className="p-4 md:w-1/2 flex flex-col text-center items-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-blue-100 text-blue-500 mb-5 flex-shrink-0">
+              <img src="./assets/back.png" alt="Backup" className="w-10 h-10" />
+            </div>
+            <div className="flex-grow">
+              <h2 className="text-gray-900 text-lg title-font font-bold mb-3">
+                バックアップ
+              </h2>
+              <p className="leading-relaxed text-base">
+                定期的なバックアップ:
+                データ損失に備え、重要なデータのバックアップを定期的に行い、バックアップデータを暗号化します。
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
@@ -126,27 +207,23 @@ const Support = () => {
         {/* ケイラクラウドを初めてみよう！ */}
         <ScrollAnimationWrapper className="relative w-full mt-8 mb-16">
           <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
-            <div className="absolute rounded-xl py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-orange-500">
-              <div className="flex flex-col text-left w-10/12 sm:w-7/12 lg:w-5/12 mb-6 sm:mb-0">
-                <h5 className="text-white-500 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-medium">
-                  <strong>
-                    ケイラクラウドを
-                    <br />
-                    初めてみよう！
+            <div className="absolute rounded-xl py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-blue-100">
+              <div className="flex flex-col justify-center lg:text-left">
+                <p className="mb-1 text-sm font-medium tracking-widest uppercase text-white-500">
+                  日常の業務を効率化してもっとラクに！
+                </p>
+                <h1 className="py-2 text-3xl font-bold leading-tight title-font text-white-300">
+                  <strong className="text-pink-100 text-4xl">
+                    ケイラクラウド
                   </strong>
-                </h5>
-                <p className="text-gray-500">まずは無料プランに登録！</p>
+                  を始めてみよう！
+                </h1>
               </div>
-              <ScrollLink
-                to="contact"
-                smooth={true}
-                duration={500}
-                offset={-100}
-              >
-                <ButtonPrimary className="bg-orange-500">
-                  無料プランで始める
-                </ButtonPrimary>
-              </ScrollLink>
+              <div className="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end">
+                <ButtonPrimary>無料で始める</ButtonPrimary>
+
+                <ButtonPrimary2>お問い合わせ</ButtonPrimary2>
+              </div>
             </div>
             <div
               className="absolute bg-black-600 opacity-5 w-11/12 rounded-lg h-60 sm:h-56 top-0 mt-12 mx-auto left-0 right-0" // mtを8から12に変更
