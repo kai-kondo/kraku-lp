@@ -36,10 +36,10 @@ const Feature = () => {
             whileInView="visible"
             variants={fadeIn}
           >
-            <h3 className="text-2xl lg:text-1xl font-semibold leading-relaxed text-black-600 mt-4 mb-2">
-              ケイラクラウドなら！
+            <h3 className="text-2xl lg:text-1xl font-bold leading-relaxed text-black-600 mt-4 mb-2">
+              ケイラクラウドなら全て解決！
             </h3>
-            <h2 className="text-3xl lg:text-4xl font-bold leading-relaxed text-orange-500 mt-2 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold leading-relaxed text-blue-100 mt-2 mb-4">
               ケイラクラウドとは？
             </h2>
             <p className="my-2 text-black-500"></p>
