@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
-import { Link as ScrollLink } from "react-scroll";
+import { Link as LinkScroll } from "react-scroll";
 import ButtonPrimary from "./misc/ButtonPrimary";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ButtonPrimary2 from "./misc/ButtonPrimary2";
@@ -220,9 +220,22 @@ const Support = () => {
                 </h1>
               </div>
               <div className="flex flex-col items-center justify-center flex-shrink-0 mt-6 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:ml-4 lg:mt-0 lg:justify-end">
-                <ButtonPrimary>無料で始める</ButtonPrimary>
-
-                <ButtonPrimary2>お問い合わせ</ButtonPrimary2>
+                <LinkScroll
+                  to="Hero"
+                  smooth={true}
+                  duration={500}
+                  offset={-150} // オフセットを調整して、スクロール位置を微調整
+                >
+                  <ButtonPrimary>資料請求</ButtonPrimary>
+                </LinkScroll>
+                <LinkScroll
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  offset={-150} // オフセットを調整して、スクロール位置を微調整
+                >
+                  <ButtonPrimary2>お問い合わせ</ButtonPrimary2>
+                </LinkScroll>
               </div>
             </div>
             <div

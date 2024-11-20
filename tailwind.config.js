@@ -54,7 +54,11 @@ module.exports = {
         500: "#F2811D",
       },
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        xxs: "0.625rem", // 10px
+      },
+    },
   },
   variants: {
     extend: {
