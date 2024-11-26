@@ -1,9 +1,13 @@
-const { Client } = require("@notionhq/client");
+export const config = {
+  runtime: "experimental-edge", // Edge runtimeを使用
+};
+
+import { Client } from "@notionhq/client";
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID; // 正しいデータベースIDを環境変数で設定
 
-export async function handler(req, res) {
+export default async function handler(req) {
   try {
     // Notion APIからブログ記事データを取得
     const response = await notion.databases.query({
@@ -21,6 +25,7 @@ export async function handler(req, res) {
         },
       },
     });
+
     // ブログ記事のデータを整形
     const blogPosts = response.results.map((page) => {
       const title =
@@ -42,13 +47,17 @@ export async function handler(req, res) {
       return { title, date, url: notionUrl, tags, imageUrl }; // 組み立てたデータを返す
     });
 
-    // 成功した場合、ブログ記事データを返す
-    res.status(200).json(blogPosts);
+    // Edge Functions では Response を直接返す
+    return new Response(JSON.stringify(blogPosts), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
     console.error(error); // エラーログを表示
     // エラーが発生した場合はエラーメッセージを返す
-    res.status(500).json({ error: "Failed to fetch data from Notion API" });
+    return new Response(
+      JSON.stringify({ error: "Failed to fetch data from Notion API" }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 }
-
-export default handler;
