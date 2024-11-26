@@ -78,8 +78,8 @@ const Hero = ({
             action="https://ssl.form-mailer.jp/fm/service/Forms/confirm"
             method="post"
             name="form1"
-            ENCTYPE="multipart/form-data"
-            accept-charset="UTF-8"
+            encType="multipart/form-data"
+            acceptCharset="UTF-8"
             className="bg-white shadow-lg rounded-b-lg p-1 sm:p-2 space-y-1 sm:space-y-2"
           >
             <input type="hidden" name="key" value="5452c371839624" />

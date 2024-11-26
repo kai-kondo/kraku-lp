@@ -1,16 +1,44 @@
-import React, { useMemo, useEffect } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import { Link as LinkScroll } from "react-scroll";
 import ButtonPrimary from "./misc/ButtonPrimary";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ButtonPrimary2 from "./misc/ButtonPrimary2";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const Support = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    fetch("/api/getBlogList")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        if (Array.isArray(data)) {
+          // postsを設定する前にURLを整形
+          const updatedPosts = data.map((post) => {
+            // notionのURLを構築
+            const notionUrl = `https://four-honey-59f.notion.site/${post.url}`;
+            return { ...post, notionUrl }; // notionUrlを各postオブジェクトに追加
+          });
+          setPosts(updatedPosts); // 更新したpostsをステートに設定
+        } else {
+          console.error("Expected an array, but got:", data);
+          setPosts([]);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching blog posts:", error);
+        setPosts([]); // エラーが発生した場合も空配列を設定
+      });
+
     const script = document.createElement("script");
     script.src = "https://sdk.form.run/js/v2/embed.js";
     script.async = true;
@@ -188,6 +216,101 @@ const Support = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* コラム一覧セクション */}
+      <section className="py-8 sm:py-16 dark:bg-gray-900 dark:text-gray-100">
+        <div className="container p-6 mx-auto space-y-10">
+          <div className="container mx-auto p-4 my-6 space-y-2 text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl sm:text-5xl font-bold"
+            >
+              コラム一覧
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="dark:text-gray-600"
+            >
+              ケイラクラウドから物流に関して皆様に役立つコラムを発信！
+            </motion.p>
+          </div>
+
+          {/* Swiperコンポーネントでカードをスライド */}
+          <Swiper
+            spaceBetween={20} // スライド間の間隔
+            slidesPerView={1} // 最初は1つのスライドを表示
+            loop={true} // 無限ループ
+            autoplay={{ delay: 3000 }} // 3秒ごとにスライド
+            breakpoints={{
+              640: {
+                slidesPerView: 2, // 小さな画面で2枚表示
+              },
+              1024: {
+                slidesPerView: 3, // 大きな画面で3枚表示
+              },
+              1280: {
+                slidesPerView: 4, // さらに大きな画面で4枚表示
+              },
+            }}
+          >
+            {posts.map((post, index) => (
+              <SwiperSlide key={index}>
+                <article className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out dark:bg-gray-800 dark:shadow-none">
+                  {/* 画像クリック部分 */}
+                  <a
+                    rel="noopener noreferrer"
+                    href={post.url}
+                    aria-label={post.title}
+                    className="block"
+                  >
+                    <img
+                      alt={post.title}
+                      className="object-cover w-full h-64 md:h-80 transition-transform duration-500 ease-in-out transform group-hover:scale-110"
+                      src={
+                        post.imageUrl || "https://via.placeholder.com/400x300"
+                      }
+                    />
+                  </a>
+
+                  {/* タイトル部分をリンクに変更 */}
+                  <div className="p-6">
+                    <a
+                      href={post.url} // タイトル部分にもリンクを設定
+                      aria-label={post.title}
+                      className="block"
+                    >
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white truncate transition-transform duration-300 ease-in-out transform group-hover:translate-y-4 group-hover:text-gray-900 group-hover:font-bold">
+                        {post.title}
+                      </h3>
+                    </a>
+
+                    <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-500 dark:text-gray-300">
+                      <span>{new Date(post.date).toLocaleDateString()}</span>
+                      <span className="truncate">{post.tags.join(", ")}</span>
+                    </div>
+                  </div>
+                </article>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* 一覧詳細を見るボタン */}
+          <div className="text-center mt-6">
+            <a
+              href="https://four-honey-59f.notion.site/1495baa85165806f9cc1d166dce7ab98"
+              target="_blank" // 別タブで開く
+              rel="noopener noreferrer" // セキュリティ強化
+              className="inline-block px-8 py-3 mt-4 text-lg font-semibold text-white-300 bg-blue-100 rounded-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 hover:shadow-lg"
+            >
+              一覧詳細を見る
+            </a>
+          </div>
+        </div>
+      </section>
 
       <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
         {/* お問い合わせセクション */}
