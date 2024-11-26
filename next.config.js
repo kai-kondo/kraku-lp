@@ -1,6 +1,5 @@
 module.exports = {
   reactStrictMode: true,
-  swcMinify: true, // SWCコンパイラを使用して高速化
   images: {
     domains: ["example.com"], // 画像を外部ドメインから取得する場合の設定
   },

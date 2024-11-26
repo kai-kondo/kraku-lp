@@ -93,7 +93,7 @@ const Pricing = () => {
                 <p className="my-4 text-base lg:text-lg text-gray-700 text-center">
                   {feature.description}
                 </p>
-                <Link href={feature.link}>
+                <Link href={feature.link} legacyBehavior>
                   <a className="text-sm lg:text-base text-yellow-300 font-bold underline hover:text-yellow-400 transition">
                     詳細はこちら
                   </a>
