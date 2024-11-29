@@ -1,3 +1,7 @@
+export const config = {
+  runtime: "edge", // これでEdge Runtimeが設定されます
+};
+
 export default async function handler(req, res) {
   const notionApiUrl = `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`;
 
