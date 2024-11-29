@@ -1,8 +1,4 @@
-export const config = {
-  runtime: "experimental-edge",
-};
-
-export default async function handler(req) {
+export default async function handler(req, res) {
   const notionApiUrl = `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`;
 
   try {
@@ -47,15 +43,11 @@ export default async function handler(req) {
       return { title, date, url: notionUrl, tags, imageUrl };
     });
 
-    return new Response(JSON.stringify(blogPosts), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    // 正しいレスポンスを返す
+    res.status(200).json(blogPosts);
   } catch (error) {
     console.error(error);
-    return new Response(
-      JSON.stringify({ error: "Failed to fetch data from Notion API" }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
+    // エラー発生時は500ステータスでエラーメッセージを返す
+    res.status(500).json({ error: "Failed to fetch data from Notion API" });
   }
 }
