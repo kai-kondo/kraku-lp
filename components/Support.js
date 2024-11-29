@@ -5,8 +5,6 @@ import { Link as LinkScroll } from "react-scroll";
 import ButtonPrimary from "./misc/ButtonPrimary";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ButtonPrimary2 from "./misc/ButtonPrimary2";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 
 const Support = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -239,64 +237,46 @@ const Support = () => {
             </motion.p>
           </div>
 
-          {/* Swiperコンポーネントでカードをスライド */}
-          <Swiper
-            spaceBetween={20} // スライド間の間隔
-            slidesPerView={1} // 最初は1つのスライドを表示
-            loop={true} // 無限ループ
-            autoplay={{ delay: 3000 }} // 3秒ごとにスライド
-            breakpoints={{
-              640: {
-                slidesPerView: 2, // 小さな画面で2枚表示
-              },
-              1024: {
-                slidesPerView: 3, // 大きな画面で3枚表示
-              },
-              1280: {
-                slidesPerView: 4, // さらに大きな画面で4枚表示
-              },
-            }}
-          >
+          {/* Swiperコンポーネントを削除し、通常のマッピングに変更 */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post, index) => (
-              <SwiperSlide key={index}>
-                <article className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out dark:bg-gray-800 dark:shadow-none">
-                  {/* 画像クリック部分 */}
+              <article key={index} className="relative overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-800">
+                {/* 画像クリック部分 */}
+                <a
+                  rel="noopener noreferrer"
+                  href={post.url}
+                  aria-label={post.title}
+                  className="block"
+                >
+                  <img
+                    alt={post.title}
+                    className="object-cover w-full h-64 md:h-80"
+                    src={
+                      post.imageUrl || "https://via.placeholder.com/400x300"
+                    }
+                  />
+                </a>
+
+                {/* タイトル部分をリンクに変更 */}
+                <div className="p-6">
                   <a
-                    rel="noopener noreferrer"
-                    href={post.url}
+                    href={post.url} // タイトル部分にもリンクを設定
                     aria-label={post.title}
                     className="block"
                   >
-                    <img
-                      alt={post.title}
-                      className="object-cover w-full h-64 md:h-80 transition-transform duration-500 ease-in-out transform group-hover:scale-110"
-                      src={
-                        post.imageUrl || "https://via.placeholder.com/400x300"
-                      }
-                    />
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white truncate">
+                      {post.title}
+                    </h3>
                   </a>
 
-                  {/* タイトル部分をリンクに変更 */}
-                  <div className="p-6">
-                    <a
-                      href={post.url} // タイトル部分にもリンクを設定
-                      aria-label={post.title}
-                      className="block"
-                    >
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white truncate transition-transform duration-300 ease-in-out transform group-hover:translate-y-4 group-hover:text-gray-900 group-hover:font-bold">
-                        {post.title}
-                      </h3>
-                    </a>
-
-                    <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-500 dark:text-gray-300">
-                      <span>{new Date(post.date).toLocaleDateString()}</span>
-                      <span className="truncate">{post.tags.join(", ")}</span>
-                    </div>
+                  <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-500 dark:text-gray-300">
+                    <span>{new Date(post.date).toLocaleDateString()}</span>
+                    <span className="truncate">{post.tags.join(", ")}</span>
                   </div>
-                </article>
-              </SwiperSlide>
+                </div>
+              </article>
             ))}
-          </Swiper>
+          </div>
 
           {/* 一覧詳細を見るボタン */}
           <div className="text-center mt-6">
