@@ -5,8 +5,8 @@ import { Link as LinkScroll } from "react-scroll";
 import ButtonPrimary from "./misc/ButtonPrimary";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ButtonPrimary2 from "./misc/ButtonPrimary2";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import Image from "next/image";
 
 const Support = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -217,15 +217,15 @@ const Support = () => {
         </div>
       </div>
 
-      {/* コラム一覧セクション */}
-      <section className="py-8 sm:py-16 dark:bg-gray-900 dark:text-gray-100">
-        <div className="container p-6 mx-auto space-y-10">
-          <div className="container mx-auto p-4 my-6 space-y-2 text-center">
+      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900 dark:text-gray-100">
+        <div className="container px-6 mx-auto space-y-12 sm:space-y-16">
+          {/* 見出し部分 */}
+          <div className="text-center space-y-6">
             <motion.h2
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-3xl sm:text-5xl font-bold"
+              className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-100"
             >
               コラム一覧
             </motion.h2>
@@ -233,63 +233,34 @@ const Support = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="dark:text-gray-600"
+              className="text-lg sm:text-xl text-gray-600 dark:text-gray-400"
             >
               ケイラクラウドから物流に関して皆様に役立つコラムを発信！
             </motion.p>
           </div>
 
-          {/*
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post, index) => (
-              <article key={index} className="relative overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-800">
-
-                <a
-                  rel="noopener noreferrer"
-                  href={post.url}
-                  aria-label={post.title}
-                  className="block"
-                >
-                  <img
-                    alt={post.title}
-                    className="object-cover w-full h-64 md:h-80"
-                    src={
-                      post.imageUrl || "https://via.placeholder.com/400x300"
-                    }
-                  />
-                </a>
-
-
-                <div className="p-6">
-                  <a
-                    href={post.url} // タイトル部分にもリンクを設定
-                    aria-label={post.title}
-                    className="block"
-                  >
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white truncate">
-                      {post.title}
-                    </h3>
-                  </a>
-
-                  <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs text-gray-500 dark:text-gray-300">
-                    <span>{new Date(post.date).toLocaleDateString()}</span>
-                    <span className="truncate">{post.tags.join(", ")}</span>
-                  </div>
-                </div>
-              </article>
-            ))}
+          {/* 画像 */}
+          <div className="flex justify-center">
+            <Image
+              src="/assets/blog2.png"
+              alt="ブログイメージ"
+              layout="intrinsic"
+              quality={100}
+              height={414}
+              width={600}
+              className="rounded-lg shadow-xl border-4 border-orange-100 transform transition duration-500 hover:scale-105"
+            />
           </div>
-          */}
 
           {/* 一覧詳細を見るボタン */}
-          <div className="text-center mt-6">
+          <div className="text-center mt-8">
             <a
               href="https://four-honey-59f.notion.site/1495baa85165806f9cc1d166dce7ab98"
-              target="_blank" // 別タブで開く
-              rel="noopener noreferrer" // セキュリティ強化
-              className="inline-block px-8 py-3 mt-4 text-lg font-semibold text-white-300 bg-blue-100 rounded-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 hover:shadow-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 mt-6 text-lg font-semibold text-white-300 bg-blue-100 rounded-lg shadow-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 hover:shadow-xl"
             >
-              一覧詳細を見る
+              ケイラクラウドコラムを見る
             </a>
           </div>
         </div>
