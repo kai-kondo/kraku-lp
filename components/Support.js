@@ -5,6 +5,8 @@ import { Link as LinkScroll } from "react-scroll";
 import ButtonPrimary from "./misc/ButtonPrimary";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ButtonPrimary2 from "./misc/ButtonPrimary2";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const Support = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -237,11 +239,11 @@ const Support = () => {
             </motion.p>
           </div>
 
-          {/* Swiperコンポーネントを削除し、通常のマッピングに変更 */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/*
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((post, index) => (
               <article key={index} className="relative overflow-hidden rounded-xl bg-white shadow-lg dark:bg-gray-800">
-                {/* 画像クリック部分 */}
+
                 <a
                   rel="noopener noreferrer"
                   href={post.url}
@@ -257,7 +259,7 @@ const Support = () => {
                   />
                 </a>
 
-                {/* タイトル部分をリンクに変更 */}
+
                 <div className="p-6">
                   <a
                     href={post.url} // タイトル部分にもリンクを設定
@@ -277,6 +279,7 @@ const Support = () => {
               </article>
             ))}
           </div>
+          */}
 
           {/* 一覧詳細を見るボタン */}
           <div className="text-center mt-6">
