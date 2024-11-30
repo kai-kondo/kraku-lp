@@ -255,7 +255,7 @@ const Support = () => {
           {/* 一覧詳細を見るボタン */}
           <div className="text-center mt-8">
             <a
-              href="https://four-honey-59f.notion.site/1495baa85165806f9cc1d166dce7ab98"
+              href="https://four-honey-59f.notion.site/14d5baa85165801089a9fa7201a51a27"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 mt-6 text-lg font-semibold text-white-300 bg-blue-100 rounded-lg shadow-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 hover:shadow-xl"
