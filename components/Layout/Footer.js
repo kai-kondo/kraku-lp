@@ -125,16 +125,6 @@ const Footer = () => {
 
             <li className="my-2 hover:text-orange-500 cursor-pointer transition-all font-semibold">
               <a
-                href="https://support.kraku.jp/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                操作マニュアル
-              </a>
-            </li>
-
-            <li className="my-2 hover:text-orange-500 cursor-pointer transition-all font-semibold">
-              <a
                 href="https://lin.ee/jixRRYe"
                 target="_blank"
                 rel="noopener noreferrer"
