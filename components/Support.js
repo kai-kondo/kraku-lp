@@ -10,44 +10,6 @@ import Image from "next/image";
 
 const Support = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    fetch("/api/getBlogList")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        if (Array.isArray(data)) {
-          // postsを設定する前にURLを整形
-          const updatedPosts = data.map((post) => {
-            // notionのURLを構築
-            const notionUrl = `https://four-honey-59f.notion.site/${post.url}`;
-            return { ...post, notionUrl }; // notionUrlを各postオブジェクトに追加
-          });
-          setPosts(updatedPosts); // 更新したpostsをステートに設定
-        } else {
-          console.error("Expected an array, but got:", data);
-          setPosts([]);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching blog posts:", error);
-        setPosts([]); // エラーが発生した場合も空配列を設定
-      });
-
-    const script = document.createElement("script");
-    script.src = "https://sdk.form.run/js/v2/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
     <section className="m-4 md:m-8  bg-gradient-to-b from-white-300 to-white-500 w-full dark:text-gray-800">
@@ -216,55 +178,6 @@ const Support = () => {
           </motion.div>
         </div>
       </div>
-
-      <section className="py-16 sm:py-24 bg-white dark:bg-gray-900 dark:text-gray-100">
-        <div className="container px-6 mx-auto space-y-12 sm:space-y-16">
-          {/* 見出し部分 */}
-          <div className="text-center space-y-6">
-            <motion.h2
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-100"
-            >
-              コラム一覧
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="text-lg sm:text-xl text-gray-600 dark:text-gray-400"
-            >
-              ケイラクラウドから物流に関して皆様に役立つコラムを発信！
-            </motion.p>
-          </div>
-
-          {/* 画像 */}
-          <div className="flex justify-center">
-            <Image
-              src="/assets/blog2.png"
-              alt="ブログイメージ"
-              layout="intrinsic"
-              quality={100}
-              height={414}
-              width={600}
-              className="rounded-lg shadow-xl border-4 border-orange-100 transform transition duration-500 hover:scale-105"
-            />
-          </div>
-
-          {/* 一覧詳細を見るボタン */}
-          <div className="text-center mt-8">
-            <a
-              href="https://four-honey-59f.notion.site/14d5baa85165801089a9fa7201a51a27"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 mt-6 text-lg font-semibold text-white-300 bg-blue-100 rounded-lg shadow-lg transition duration-300 transform hover:bg-blue-700 hover:scale-105 hover:shadow-xl"
-            >
-              ケイラクラウドコラムを見る
-            </a>
-          </div>
-        </div>
-      </section>
 
       <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto flex flex-col w-full text-center justify-center">
         {/* お問い合わせセクション */}
